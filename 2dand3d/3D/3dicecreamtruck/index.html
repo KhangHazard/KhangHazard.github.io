@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ice cream truck</title>
+</head>
+<body>
+   
+<div class="scene">
+    <div class="van">
+      <div class="cab">
+        <div class="cube" id="cab-base">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="cab-body">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="cab-back">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="cab-roof">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cab-frame _face">
+          <div class="cube" id="cab-frame-left">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="cab-frame-right">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="_face" id="cab-window-front"></div>
+        </div>
+        <div class="_face" id="cab-window-left"></div>
+        <div class="_face" id="cab-window-right"></div>
+        <div class="cylinder" id="cab-light">
+          <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="wedge" id="cab-top-left">
+          <div class="container">
+            <div class="side"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="wedge" id="cab-top-right">
+          <div class="container">
+            <div class="side"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="cab-handle-left">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="cab-handle-right">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="wheel-front _face">
+          <div class="cylinder" id="wheel-front">
+            <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="body _face">
+        <div class="cube" id="body-base">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="body-left">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="body-right">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="body-front">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="cube" id="body-back">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="wheels-back _face">
+          <div class="wheel-back-left _face">
+            <div class="cylinder" id="wheel-back-left">
+              <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+          <div class="wheel-back-right _face">
+            <div class="cylinder" id="wheel-back-right">
+              <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="body-roof _face">
+          <div class="cube" id="body-roof-front">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="body-roof-back">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="body-roof-left">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="body-roof-right">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cylinder" id="body-roof-chimney">
+            <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div id="body-roof-window"></div>
+        </div>
+        <div class="cube" id="body-shelf">
+          <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+          </div>
+        </div>
+        <div class="bookshelf _face">
+          <div class="cube" id="bookshelf-back">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-bottom">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-top">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-left">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-right">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-vertical-left">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-vertical-right">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-horizontal-top">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="bookshelf-horizontal-bottom">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cartons _face">
+          <div class="cube" id="carton-1">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="carton-2">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+          <div class="cube" id="carton-3">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+        </div>
+        <div class="glasses-bookshelf _face">
+          <div class="cylinder" id="glass-bookshelf-1">
+            <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="cylinder" id="glass-bookshelf-2">
+            <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="cylinder" id="glass-bookshelf-3">
+            <div class="container"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+        <div class="canopy-edge _face">
+          <div class="cube" id="body-canopy-edge">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+        </div>
+        <div class="canopy _face">
+          <div class="cube" id="body-canopy-main">
+            <div class="container">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="top"></div>
+              <div class="bottom"></div>
+              <div class="front"></div>
+              <div class="back"></div>
+            </div>
+          </div>
+        </div>
+        <div class="poles _face">
+          <div class="pole-left _face">
+            <div class="cube" id="pole-left">
+              <div class="container">
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+              </div>
+            </div>
+          </div>
+          <div class="pole-right _face">
+            <div class="cube" id="pole-right">
+              <div class="container">
+                <div class="left"></div>
+                <div class="right"></div>
+                <div class="top"></div>
+                <div class="bottom"></div>
+                <div class="front"></div>
+                <div class="back"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

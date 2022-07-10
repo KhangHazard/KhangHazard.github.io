@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMac</title>
+</head>
+<body>
+    <svg display="none">
+        <symbol id="sun" viewBox="0 0 24 24">
+            <g fill="currentColor">
+                <path d="M12,18.2c-3.4,0-6.2-2.8-6.2-6.2S8.6,5.8,12,5.8s6.2,2.8,6.2,6.2S15.4,18.2,12,18.2z M12,7.6c-2.4,0-4.4,2-4.4,4.4s2,4.4,4.4,4.4s4.4-2,4.4-4.4S14.4,7.6,12,7.6z"/>
+                <path d="M12,4.6c-0.5,0-0.9-0.4-0.9-0.9V0.9C11.1,0.4,11.5,0,12,0s0.9,0.4,0.9,0.9v2.8C12.9,4.2,12.5,4.6,12,4.6z"/>
+                <path d="M12,24c-0.5,0-0.9-0.4-0.9-0.9v-2.8c0-0.5,0.4-0.9,0.9-0.9s0.9,0.4,0.9,0.9v2.8C12.9,23.6,12.5,24,12,24z"/>
+                <path d="M23.1,12.9h-2.8c-0.5,0-0.9-0.4-0.9-0.9s0.4-0.9,0.9-0.9h2.8c0.5,0,0.9,0.4,0.9,0.9S23.6,12.9,23.1,12.9z"/>
+                <path d="M3.7,12.9H0.9C0.4,12.9,0,12.5,0,12s0.4-0.9,0.9-0.9h2.8c0.5,0,0.9,0.4,0.9,0.9S4.2,12.9,3.7,12.9z"/>
+                <path d="M17.9,7c-0.2,0-0.4-0.1-0.6-0.3c-0.3-0.3-0.3-0.9,0-1.2l2-2c0.3-0.3,0.9-0.3,1.2,0c0.3,0.3,0.3,0.9,0,1.2l-2,2
+                         C18.3,6.9,18.1,7,17.9,7z"/>
+                <path d="M4.1,20.7c-0.2,0-0.4-0.1-0.6-0.3c-0.3-0.3-0.3-0.9,0-1.2l2-2c0.3-0.3,0.9-0.3,1.2,0c0.3,0.3,0.3,0.9,0,1.2l-2,2
+                         C4.6,20.7,4.3,20.7,4.1,20.7z"/>
+                <path d="M19.9,20.7c-0.2,0-0.4-0.1-0.6-0.3l-2-2c-0.3-0.3-0.3-0.9,0-1.2c0.3-0.3,0.9-0.3,1.2,0l2,2c0.3,0.3,0.3,0.9,0,1.2
+                         C20.3,20.7,20.1,20.7,19.9,20.7z"/>
+                <path d="M6.1,7C5.9,7,5.7,6.9,5.5,6.7l-2-2c-0.3-0.3-0.3-0.9,0-1.2c0.3-0.3,0.9-0.3,1.2,0l2,2c0.3,0.3,0.3,0.9,0,1.2
+                         C6.6,6.9,6.3,7,6.1,7z"/>
+            </g>
+        </symbol>
+        <symbol id="moon" viewBox="0 0 24 24">
+            <g fill="currentColor">
+                <path d="M13,24C6.3,24,1,18.6,1,12S6.4,0,13,0c0.4,0,0.8,0,1.2,0.1c0.4,0,0.7,0.3,0.8,0.6c0.1,0.3,0.1,0.7-0.1,1c-1.1,1.7-1.7,3.6-1.7,5.6c0,5.1,3.9,9.4,9,9.9c0.4,0,0.7,0.3,0.8,0.6c0.2,0.3,0.1,0.7-0.1,1C20.6,22,16.9,24,13,24L13,24zM12.4,2C7.1,2.3,3,6.7,3,12c0,5.5,4.5,10,10,10c2.8,0,5.4-1.1,7.2-3.1c-2.3-0.6-4.3-1.8-5.9-3.6c-2-2.2-3.1-5.1-3.1-8.1C11.2,5.4,11.6,3.6,12.4,2L12.4,2z"/>
+            </g>
+        </symbol>
+    </svg>
+    
+    <input class="theme__switch" id="dark" type="checkbox" name="dark" role="switch">
+    <label class="theme__label" for="dark">
+        <svg class="theme__icon" width="24px" height="24px" aria-hidden="true">
+            <use xlink:href="#moon" />
+        </svg>
+        <svg class="theme__icon" width="24px" height="24px" aria-hidden="true">
+            <use xlink:href="#sun" />
+        </svg>
+        <span class="sr">Dark</span>
+    </label>
+    <div class="theme__bg"></div>
+    <label class="imac">
+        <input class="imac__input" type="checkbox" name="on" checked>
+        <span class="sr">Power</span>
+        <span class="imac__block">
+            <span class="imac__side imac__side--back"></span>
+            <span class="imac__side imac__side--top"></span>
+            <span class="imac__side imac__side--left"></span>
+            <span class="imac__side imac__side--bottom"></span>
+            <span class="imac__side imac__side--inner-right"></span>
+            <span class="imac__side imac__side--inner-top"></span>
+            <span class="imac__side imac__side--inner-front"></span>
+            <span class="imac__side imac__side--inner-left"></span>
+            <span class="imac__side imac__side--inner-bottom"></span>
+            <span class="imac__side imac__side--front"></span>
+            <span class="imac__side imac__side--right"></span>
+        </span>
+    </label>
+</body>
+</html>

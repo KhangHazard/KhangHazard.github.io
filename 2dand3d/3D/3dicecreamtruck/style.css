@@ -1,0 +1,4440 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #4F7EA6;
+  overflow: hidden;
+  perspective: 1000px;
+}
+body .scene, body .scene * {
+  transform-style: preserve-3d;
+}
+body .scene {
+  position: relative;
+  width: 70vmin;
+  height: 20vmin;
+  transform: rotateX(-10deg);
+  animation: tiltVan 22s ease-in-out infinite;
+}
+@keyframes tiltVan {
+  0% {
+    transform: rotateX(-10deg);
+  }
+  30% {
+    transform: rotateX(0deg);
+  }
+  70% {
+    transform: rotateX(-30deg);
+  }
+  100% {
+    transform: rotateX(-10deg);
+  }
+}
+body .scene::after {
+  content: "";
+  position: absolute;
+  width: 70vmin;
+  height: 70vmin;
+  left: 0;
+  bottom: 0;
+  z-index: -100;
+  border-radius: 50%;
+  box-shadow: -0.1vmin -0.1vmin 0.7vmin #fff3, 0.1vmin 0.1vmin 0.7vmin #0002;
+  background-color: #0000;
+  transform: rotateX(90deg) translateZ(-35vmin);
+  display: none;
+}
+body .scene .cube, body .scene .cube *, body .scene ._face, body .scene .van, body .scene .van * {
+  position: absolute;
+  bottom: 0;
+}
+body .scene .van {
+  position: absolute;
+  width: 30vmin;
+  height: 17.5vmin;
+  bottom: 0;
+  transform-origin: 15vmin 8.75vmin;
+  transform: translate3d(18vmin, -2.5vmin, 0vmin) rotateY(0deg) scale3d(1.75, 1.75, 1.75);
+  animation: moveVan 30s ease-in-out infinite;
+}
+@keyframes moveVan {
+  0% {
+    transform: translate3d(18vmin, -2.5vmin, 0vmin) rotateY(0deg) scale3d(1.75, 1.75, 1.75);
+  }
+  15% {
+    transform: translate3d(18vmin, -2.6vmin, 0vmin) rotateY(200deg) scale3d(1.75, 1.75, 1.75);
+  }
+  30% {
+    transform: translate3d(18vmin, -2.6vmin, 0vmin) rotateY(180deg) rotateX(0deg);
+  }
+  45% {
+    transform: translate3d(18vmin, -2.6vmin, 0vmin) rotateY(120deg) rotateX(0deg) scale3d(1.75, 1.75, 1.75);
+  }
+  60% {
+    transform: translate3d(18vmin, -2.6vmin, 0vmin) rotateY(-10deg) scale3d(1.75, 1.75, 1.75);
+  }
+  80% {
+    transform: translate3d(18vmin, -2.6vmin, 0vmin) rotateY(-40deg) scale3d(1.75, 1.75, 1.75);
+  }
+  100% {
+    transform: translate3d(18vmin, -2.5vmin, 0vmin) rotateY(0deg) scale3d(1.75, 1.75, 1.75);
+  }
+}
+body .scene .van .cab {
+  width: 8vmin;
+  height: 13.5vmin;
+  transform-origin: 4vmin 6.75vmin;
+  animation: rotCab 0.3s ease-in-out infinite alternate;
+}
+@keyframes rotCab {
+  0% {
+    transform: rotateX(0.5deg) rotateY(0.5deg);
+  }
+  33% {
+    transform: rotateX(0.5deg) rotateY(-0.5deg);
+  }
+  66% {
+    transform: rotateX(-0.5deg) rotateY(0.5deg);
+  }
+  100% {
+    transform: rotateX(-0.5deg) rotateY(-0.5deg);
+  }
+}
+body .scene .van .cab #cab-base {
+  width: 8vmin;
+  height: 1vmin;
+  transform: translate3d(0vmin, 0vmin, 0vmin);
+}
+body .scene .van .cab #cab-base .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-base .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab #cab-base .container .left {
+  width: 8vmin;
+  height: 1vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-4vmin);
+}
+body .scene .van .cab #cab-base .container .right {
+  width: 8vmin;
+  height: 1vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-4vmin) translateZ(8vmin);
+}
+body .scene .van .cab #cab-base .container .top {
+  background-color: white;
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(4vmin) translateZ(1vmin);
+}
+body .scene .van .cab #cab-base .container .bottom {
+  background-color: white;
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(4vmin);
+}
+body .scene .van .cab #cab-base .container .front {
+  background-color: #e1e1e1;
+  width: 8vmin;
+  height: 1vmin;
+  transform-origin: bottom left;
+  transform: translateZ(4vmin);
+}
+body .scene .van .cab #cab-base .container .back {
+  background-color: #e1e1e1;
+  width: 8vmin;
+  height: 1vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(4vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab #cab-base .container .bottom::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0001;
+  transform: translateZ(3vmin);
+  box-shadow: 0 0 2vmin #0002;
+}
+body .scene .van .cab #cab-body {
+  width: 7.5vmin;
+  height: 5vmin;
+  transform: translate3d(0.25vmin, -1vmin, 0vmin);
+}
+body .scene .van .cab #cab-body .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-body .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab #cab-body .container .left {
+  width: 7.5vmin;
+  height: 5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-3.75vmin);
+}
+body .scene .van .cab #cab-body .container .right {
+  width: 7.5vmin;
+  height: 5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-3.75vmin) translateZ(7.5vmin);
+}
+body .scene .van .cab #cab-body .container .top {
+  background-color: #d76a79;
+  width: 7.5vmin;
+  height: 7.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(3.75vmin) translateZ(5vmin);
+}
+body .scene .van .cab #cab-body .container .bottom {
+  background-color: #d76a79;
+  width: 7.5vmin;
+  height: 7.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(3.75vmin);
+}
+body .scene .van .cab #cab-body .container .front {
+  background-color: #c9364a;
+  width: 7.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(3.75vmin);
+}
+body .scene .van .cab #cab-body .container .back {
+  background-color: #c9364a;
+  width: 7.5vmin;
+  height: 5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(3.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab #cab-body .container .front::after {
+  content: "";
+  position: absolute;
+  width: 7.5vmin;
+  height: 12.5vmin;
+  background-color: #D25667;
+  background-image: linear-gradient(to bottom, #0000, #ad2e40), linear-gradient(to left, #0000, #cd4255);
+  transform: translate3d(0vmin, -3.75vmin, 0.01vmin);
+  clip-path: polygon(2.5vmin 0, 0 7.5vmin, 0 12.5vmin, 0.5vmin 12.5vmin, 0.5vmin 7.5vmin, 2.9vmin 0.5vmin, 6.25vmin 0.5vmin, 6.25vmin 7.5vmin, 0.5vmin 7.5vmin, 0.5vmin 12.5vmin, 7.5vmin 12.5vmin, 7.5vmin 0);
+}
+body .scene .van .cab #cab-body .container .back::after {
+  content: "";
+  position: absolute;
+  width: 7.5vmin;
+  height: 12.5vmin;
+  background-color: #c13447;
+  background-image: linear-gradient(to bottom, #0000, #992938);
+  transform: translate3d(0vmin, -3.75vmin, -0.01vmin);
+  clip-path: polygon(2.5vmin 0, 0 7.5vmin, 0 12.5vmin, 0.5vmin 12.5vmin, 0.5vmin 7.5vmin, 2.9vmin 0.5vmin, 6.25vmin 0.5vmin, 6.25vmin 7.5vmin, 0.5vmin 7.5vmin, 0.5vmin 12.5vmin, 7.5vmin 12.5vmin, 7.5vmin 0);
+}
+body .scene .van .cab #cab-light {
+  width: 0.25vmin;
+  height: 2vmin;
+  transform: translate3d(0vmin, -2.75vmin, 0vmin);
+}
+body .scene .van .cab #cab-light .container::before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #cd4255;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin);
+  border-radius: 50%;
+}
+body .scene .van .cab #cab-light .container::after {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #cd4255;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin) translateZ(0.25vmin);
+  border-radius: 50%;
+}
+body .scene .van .cab #cab-light span:nth-child(1) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(10deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(2) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(20deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(3) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(30deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(4) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(40deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(5) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(50deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(6) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(60deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(7) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(70deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(8) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(80deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(9) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(90deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(10) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(100deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(11) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(110deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(12) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(120deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(13) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(130deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(14) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(140deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(15) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(150deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(16) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(160deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(17) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(170deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(18) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(180deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(19) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(190deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(20) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(200deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(21) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(210deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(22) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(220deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(23) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(230deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(24) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(240deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(25) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(250deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(26) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(260deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(27) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(270deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(28) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(280deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(29) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(290deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(30) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(300deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(31) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(310deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(32) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(320deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(33) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(330deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(34) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(340deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(35) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(350deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light span:nth-child(36) {
+  width: 0.25vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(360deg) translateZ(1vmin);
+}
+body .scene .van .cab #cab-light .container::before {
+  background-image: radial-gradient(circle, #DFB190 50%, transparent 55% 100%);
+}
+body .scene .van .cab #cab-light .container::after {
+  box-shadow: 0 0 0.15vmin #0005;
+}
+body .scene .van .cab #cab-back {
+  width: 1.25vmin;
+  height: 12vmin;
+  transform: translate3d(6.5vmin, -1vmin, 0vmin);
+}
+body .scene .van .cab #cab-back .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-back .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab #cab-back .container .left {
+  width: 7.5vmin;
+  height: 12vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-3.75vmin);
+}
+body .scene .van .cab #cab-back .container .right {
+  width: 7.5vmin;
+  height: 12vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-3.75vmin) translateZ(1.25vmin);
+}
+body .scene .van .cab #cab-back .container .top {
+  background-color: #d76a79;
+  width: 1.25vmin;
+  height: 7.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(3.75vmin) translateZ(12vmin);
+}
+body .scene .van .cab #cab-back .container .bottom {
+  background-color: #d76a79;
+  width: 1.25vmin;
+  height: 7.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(3.75vmin);
+}
+body .scene .van .cab #cab-back .container .front {
+  background-color: #c9364a;
+  width: 1.25vmin;
+  height: 12vmin;
+  transform-origin: bottom left;
+  transform: translateZ(3.75vmin);
+}
+body .scene .van .cab #cab-back .container .back {
+  background-color: #c9364a;
+  width: 1.25vmin;
+  height: 12vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(3.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab #cab-roof {
+  width: 5vmin;
+  height: 0.5vmin;
+  transform: translate3d(2.75vmin, -13vmin, 0vmin);
+}
+body .scene .van .cab #cab-roof .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-roof .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab #cab-roof .container .left {
+  width: 7.5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-3.75vmin);
+}
+body .scene .van .cab #cab-roof .container .right {
+  width: 7.5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-3.75vmin) translateZ(5vmin);
+}
+body .scene .van .cab #cab-roof .container .top {
+  background-color: #d76a79;
+  width: 5vmin;
+  height: 7.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(3.75vmin) translateZ(0.5vmin);
+}
+body .scene .van .cab #cab-roof .container .bottom {
+  background-color: #d76a79;
+  width: 5vmin;
+  height: 7.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(3.75vmin);
+}
+body .scene .van .cab #cab-roof .container .front {
+  background-color: #c9364a;
+  width: 5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(3.75vmin);
+}
+body .scene .van .cab #cab-roof .container .back {
+  background-color: #c9364a;
+  width: 5vmin;
+  height: 0.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(3.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab #cab-roof .container .top {
+  background-image: linear-gradient(to left, #0000, #cd4255), linear-gradient(to top, #0000, #cd4255);
+}
+body .scene .van .cab .cab-frame {
+  width: 7.5vmin;
+  height: 7.9vmin;
+  transform-origin: bottom left;
+  transform: translate3d(0.25vmin, -6vmin, 0vmin) rotateZ(18.5deg);
+}
+body .scene .van .cab .cab-frame #cab-frame-left {
+  width: 0.5vmin;
+  height: 7.9vmin;
+  transform: translate3d(0vmin, 0vmin, 3.5vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container .left {
+  width: 0.5vmin;
+  height: 7.9vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.25vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container .right {
+  width: 0.5vmin;
+  height: 7.9vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.25vmin) translateZ(0.5vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container .top {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.25vmin) translateZ(7.9vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container .bottom {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.25vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container .front {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 7.9vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.25vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-left .container .back {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 7.9vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.25vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab .cab-frame #cab-frame-right {
+  width: 0.5vmin;
+  height: 7.9vmin;
+  transform: translate3d(0vmin, 0vmin, -3.5vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container .left {
+  width: 0.5vmin;
+  height: 7.9vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.25vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container .right {
+  width: 0.5vmin;
+  height: 7.9vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.25vmin) translateZ(0.5vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container .top {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.25vmin) translateZ(7.9vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container .bottom {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.25vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container .front {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 7.9vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.25vmin);
+}
+body .scene .van .cab .cab-frame #cab-frame-right .container .back {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 7.9vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.25vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab .cab-frame #cab-window-front {
+  width: 7.5vmin;
+  height: 7.5vmin;
+  background-color: #8FBAD5CC;
+  transform: translate3d(-3.5vmin, 0vmin, 0vmin) rotateY(90deg);
+}
+body .scene .van .cab #cab-window-left {
+  width: 6vmin;
+  height: 7vmin;
+  background-color: #8FBAD5CC;
+  transform: translate3d(0.75vmin, -6vmin, 3.5vmin);
+  clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+body .scene .van .cab #cab-window-right {
+  width: 6vmin;
+  height: 7vmin;
+  background-color: #8FBAD5CC;
+  transform: translate3d(0.75vmin, -6vmin, -3.5vmin);
+  clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+body .scene .van .cab #cab-top-left {
+  width: 1vmin;
+  height: 2vmin;
+  transform: translate3d(4.75vmin, -13.5vmin, 0.5vmin) rotateY(-90deg);
+}
+body .scene .van .cab #cab-top-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-top-left .container * {
+  position: absolute;
+  bottom: 0;
+}
+body .scene .van .cab #cab-top-left .container .side {
+  width: 4vmin;
+  height: 2vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2vmin);
+}
+body .scene .van .cab #cab-top-left .container .top {
+  background-color: white;
+  width: 2.2360679775vmin;
+  height: 4vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2vmin) translateZ(2vmin) rotateY(63.4349488229deg);
+}
+body .scene .van .cab #cab-top-left .container .bottom {
+  background-color: white;
+  width: 1vmin;
+  height: 4vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2vmin);
+}
+body .scene .van .cab #cab-top-left .container .front {
+  background-color: #e1e1e1;
+  width: 1vmin;
+  height: 2vmin;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom left;
+  transform: translateZ(2vmin);
+}
+body .scene .van .cab #cab-top-left .container .back {
+  background-color: #e1e1e1;
+  width: 1vmin;
+  height: 2vmin;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2vmin);
+}
+body .scene .van .cab #cab-top-left .container .side {
+  background: transparent;
+}
+body .scene .van .cab #cab-top-right {
+  width: 1vmin;
+  height: 2vmin;
+  transform: translate3d(4.75vmin, -13.5vmin, -0.5vmin) rotateY(90deg);
+}
+body .scene .van .cab #cab-top-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-top-right .container * {
+  position: absolute;
+  bottom: 0;
+}
+body .scene .van .cab #cab-top-right .container .side {
+  width: 4vmin;
+  height: 2vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2vmin);
+}
+body .scene .van .cab #cab-top-right .container .top {
+  background-color: white;
+  width: 2.2360679775vmin;
+  height: 4vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2vmin) translateZ(2vmin) rotateY(63.4349488229deg);
+}
+body .scene .van .cab #cab-top-right .container .bottom {
+  background-color: white;
+  width: 1vmin;
+  height: 4vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2vmin);
+}
+body .scene .van .cab #cab-top-right .container .front {
+  background-color: #e1e1e1;
+  width: 1vmin;
+  height: 2vmin;
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+  transform-origin: bottom left;
+  transform: translateZ(2vmin);
+}
+body .scene .van .cab #cab-top-right .container .back {
+  background-color: #e1e1e1;
+  width: 1vmin;
+  height: 2vmin;
+  clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2vmin);
+}
+body .scene .van .cab #cab-top-right .container .side {
+  background: transparent;
+}
+body .scene .van .cab #cab-handle-left {
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform: translate3d(5.1vmin, -4.5vmin, 3.7vmin);
+}
+body .scene .van .cab #cab-handle-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-handle-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab #cab-handle-left .container .left {
+  width: 0.2vmin;
+  height: 0.2vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.1vmin);
+}
+body .scene .van .cab #cab-handle-left .container .right {
+  width: 0.2vmin;
+  height: 0.2vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.1vmin) translateZ(1.2vmin);
+}
+body .scene .van .cab #cab-handle-left .container .top {
+  background-color: white;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.1vmin) translateZ(0.2vmin);
+}
+body .scene .van .cab #cab-handle-left .container .bottom {
+  background-color: white;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.1vmin);
+}
+body .scene .van .cab #cab-handle-left .container .front {
+  background-color: #e1e1e1;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.1vmin);
+}
+body .scene .van .cab #cab-handle-left .container .back {
+  background-color: #e1e1e1;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.1vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab #cab-handle-right {
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform: translate3d(5.1vmin, -4.5vmin, -3.7vmin);
+}
+body .scene .van .cab #cab-handle-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .cab #cab-handle-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .cab #cab-handle-right .container .left {
+  width: 0.2vmin;
+  height: 0.2vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.1vmin);
+}
+body .scene .van .cab #cab-handle-right .container .right {
+  width: 0.2vmin;
+  height: 0.2vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.1vmin) translateZ(1.2vmin);
+}
+body .scene .van .cab #cab-handle-right .container .top {
+  background-color: white;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.1vmin) translateZ(0.2vmin);
+}
+body .scene .van .cab #cab-handle-right .container .bottom {
+  background-color: white;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.1vmin);
+}
+body .scene .van .cab #cab-handle-right .container .front {
+  background-color: #e1e1e1;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.1vmin);
+}
+body .scene .van .cab #cab-handle-right .container .back {
+  background-color: #e1e1e1;
+  width: 1.2vmin;
+  height: 0.2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.1vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .cab .wheel-front {
+  width: 4vmin;
+  height: 4vmin;
+  transform: translateX(1vmin) translateY(2.5vmin);
+  animation: rotWheelFront 1s linear infinite;
+}
+@keyframes rotWheelFront {
+  to {
+    transform: translateX(1vmin) translateY(2.5vmin) rotateZ(-360deg);
+  }
+}
+body .scene .van .cab .wheel-front #wheel-front {
+  width: 2vmin;
+  height: 4vmin;
+  transform: translate3d(1vmin, 0vmin, 0vmin) rotateY(90deg);
+}
+body .scene .van .cab .wheel-front #wheel-front .container::before {
+  content: "";
+  position: absolute;
+  width: 4vmin;
+  height: 4vmin;
+  background: #222548;
+  transform: translateY(-4vmin) rotateY(90deg) translateZ(-2vmin);
+  border-radius: 50%;
+}
+body .scene .van .cab .wheel-front #wheel-front .container::after {
+  content: "";
+  position: absolute;
+  width: 4vmin;
+  height: 4vmin;
+  background: #222548;
+  transform: translateY(-4vmin) rotateY(90deg) translateZ(-2vmin) translateZ(2vmin);
+  border-radius: 50%;
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(1) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(10deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(2) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(20deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(3) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(30deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(4) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(40deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(5) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(50deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(6) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(60deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(7) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(70deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(8) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(80deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(9) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(90deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(10) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(100deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(11) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(110deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(12) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(120deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(13) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(130deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(14) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(140deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(15) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(150deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(16) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(160deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(17) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(170deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(18) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(180deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(19) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(190deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(20) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(200deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(21) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(210deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(22) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(220deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(23) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(230deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(24) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(240deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(25) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(250deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(26) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(260deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(27) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(270deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(28) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(280deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(29) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(290deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(30) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(300deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(31) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(310deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(32) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(320deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(33) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(330deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(34) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(340deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(35) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(350deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front span:nth-child(36) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(360deg) translateZ(2vmin);
+}
+body .scene .van .cab .wheel-front #wheel-front .container span:nth-child(3n) {
+  border-top: 1px solid #3b3f7c;
+}
+body .scene .van .cab .wheel-front #wheel-front .container::after, body .scene .van .cab .wheel-front #wheel-front .container::before {
+  background-image: radial-gradient(circle at 50% 30%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 50% 70%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 30% 50%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 70% 50%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle, #1A1C37, 15%, #e8e8e8 17% 40%, #1A1C37 42% 100%);
+}
+body .scene .van .body {
+  width: 22vmin;
+  height: 17vmin;
+  transform-origin: 11vmin 8.5vmin;
+  transform: translate3d(8vmin, 0vmin, 0vmin);
+  animation: rotBody 0.3s ease-in-out infinite alternate;
+}
+@keyframes rotBody {
+  0% {
+    transform: translate3d(8vmin, 0vmin, 0vmin) rotateX(-0.25deg) rotateY(-0.25deg);
+  }
+  33% {
+    transform: translate3d(8vmin, 0vmin, 0vmin) rotateX(-0.25deg) rotateY(0.25deg);
+  }
+  66% {
+    transform: translate3d(8vmin, 0vmin, 0vmin) rotateX(0.25deg) rotateY(-0.25deg);
+  }
+  100% {
+    transform: translate3d(8vmin, 0vmin, 0vmin) rotateX(0.25deg) rotateY(0.25deg);
+  }
+}
+body .scene .van .body #body-base {
+  width: 22vmin;
+  height: 1vmin;
+  transform: translate3d(0vmin, 0vmin, 0vmin);
+}
+body .scene .van .body #body-base .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body #body-base .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body #body-base .container .left {
+  width: 14vmin;
+  height: 1vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-7vmin);
+}
+body .scene .van .body #body-base .container .right {
+  width: 14vmin;
+  height: 1vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-7vmin) translateZ(22vmin);
+}
+body .scene .van .body #body-base .container .top {
+  background-color: white;
+  width: 22vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(7vmin) translateZ(1vmin);
+}
+body .scene .van .body #body-base .container .bottom {
+  background-color: white;
+  width: 22vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(7vmin);
+}
+body .scene .van .body #body-base .container .front {
+  background-color: #e1e1e1;
+  width: 22vmin;
+  height: 1vmin;
+  transform-origin: bottom left;
+  transform: translateZ(7vmin);
+}
+body .scene .van .body #body-base .container .back {
+  background-color: #e1e1e1;
+  width: 22vmin;
+  height: 1vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(7vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body #body-base .container .bottom::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #0001;
+  transform: translateZ(3vmin);
+  box-shadow: 0 0 3vmin #0002;
+}
+body .scene .van .body #body-front {
+  width: 0.5vmin;
+  height: 16vmin;
+  transform: translate3d(0.25vmin, -1vmin, 0vmin);
+}
+body .scene .van .body #body-front .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body #body-front .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body #body-front .container .left {
+  width: 13.5vmin;
+  height: 16vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-6.75vmin);
+}
+body .scene .van .body #body-front .container .right {
+  width: 13.5vmin;
+  height: 16vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-6.75vmin) translateZ(0.5vmin);
+}
+body .scene .van .body #body-front .container .top {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(6.75vmin) translateZ(16vmin);
+}
+body .scene .van .body #body-front .container .bottom {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(6.75vmin);
+}
+body .scene .van .body #body-front .container .front {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 16vmin;
+  transform-origin: bottom left;
+  transform: translateZ(6.75vmin);
+}
+body .scene .van .body #body-front .container .back {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 16vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(6.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body #body-front .container .right::after {
+  content: "";
+  position: absolute;
+  width: 97%;
+  height: 97%;
+  background-image: linear-gradient(to right, #0000, #992938);
+}
+body .scene .van .body #body-front .container .left::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 16.5vmin;
+  background-color: #D25667;
+  background-image: linear-gradient(to bottom, #0000, #ad2e40), linear-gradient(to left, #0000, #cd4255);
+  transform: translate3d(0vmin, -0.25vmin, 0.01vmin);
+}
+body .scene .van .body #body-back {
+  width: 0.5vmin;
+  height: 16vmin;
+  transform: translate3d(21.25vmin, -1vmin, 0vmin);
+}
+body .scene .van .body #body-back .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body #body-back .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body #body-back .container .left {
+  width: 13.5vmin;
+  height: 16vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-6.75vmin);
+}
+body .scene .van .body #body-back .container .right {
+  width: 13.5vmin;
+  height: 16vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-6.75vmin) translateZ(0.5vmin);
+}
+body .scene .van .body #body-back .container .top {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(6.75vmin) translateZ(16vmin);
+}
+body .scene .van .body #body-back .container .bottom {
+  background-color: #d76a79;
+  width: 0.5vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(6.75vmin);
+}
+body .scene .van .body #body-back .container .front {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 16vmin;
+  transform-origin: bottom left;
+  transform: translateZ(6.75vmin);
+}
+body .scene .van .body #body-back .container .back {
+  background-color: #c9364a;
+  width: 0.5vmin;
+  height: 16vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(6.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body #body-back .container .left::after {
+  content: "";
+  position: absolute;
+  width: 97%;
+  height: 97%;
+  background-image: linear-gradient(to left, #0000, #992938);
+}
+body .scene .van .body #body-back .container .right::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 16.5vmin;
+  background-color: #D25667;
+  background-image: linear-gradient(to bottom, #0000, #ad2e40), linear-gradient(to right, #0000, #cd4255);
+  transform: translate3d(0vmin, -0.25vmin, 0.01vmin);
+}
+body .scene .van .body #body-right {
+  width: 21.5vmin;
+  height: 16vmin;
+  transform: translate3d(0.25vmin, -1vmin, -6.5vmin) rotateY(180deg);
+}
+body .scene .van .body #body-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body #body-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body #body-right .container .left {
+  width: 0.5vmin;
+  height: 16vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.25vmin);
+}
+body .scene .van .body #body-right .container .right {
+  width: 0.5vmin;
+  height: 16vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.25vmin) translateZ(21.5vmin);
+}
+body .scene .van .body #body-right .container .top {
+  background-color: #d76a79;
+  width: 21.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.25vmin) translateZ(16vmin);
+}
+body .scene .van .body #body-right .container .bottom {
+  background-color: #d76a79;
+  width: 21.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.25vmin);
+}
+body .scene .van .body #body-right .container .front {
+  background-color: #c9364a;
+  width: 21.5vmin;
+  height: 16vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.25vmin);
+}
+body .scene .van .body #body-right .container .back {
+  background-color: #c9364a;
+  width: 21.5vmin;
+  height: 16vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.25vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body #body-right .container .back::after {
+  content: "";
+  position: absolute;
+  width: 97%;
+  height: 97%;
+  background-color: #8d2634;
+}
+body .scene .van .body #body-right .container .front::after {
+  content: "ICE CREAM";
+  display: grid;
+  place-items: center;
+  color: #fff9;
+  font-family: "Rubik Moonrocks", cursive;
+  font-size: 3vmin;
+  position: absolute;
+  width: 100%;
+  height: 16.5vmin;
+  text-shadow: 0 0 2vmin #0003;
+  background-color: #c13447;
+  background-image: linear-gradient(to bottom, #0000, #992938);
+  transform: translate3d(0vmin, -0.25vmin, 0.05vmin);
+}
+body .scene .van .body #body-left {
+  width: 21.5vmin;
+  height: 6vmin;
+  transform: translate3d(0.25vmin, -1vmin, 6.5vmin);
+}
+body .scene .van .body #body-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body #body-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body #body-left .container .left {
+  width: 0.5vmin;
+  height: 6vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.25vmin);
+}
+body .scene .van .body #body-left .container .right {
+  width: 0.5vmin;
+  height: 6vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.25vmin) translateZ(21.5vmin);
+}
+body .scene .van .body #body-left .container .top {
+  background-color: #d76a79;
+  width: 21.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.25vmin) translateZ(6vmin);
+}
+body .scene .van .body #body-left .container .bottom {
+  background-color: #d76a79;
+  width: 21.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.25vmin);
+}
+body .scene .van .body #body-left .container .front {
+  background-color: #c9364a;
+  width: 21.5vmin;
+  height: 6vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.25vmin);
+}
+body .scene .van .body #body-left .container .back {
+  background-color: #c9364a;
+  width: 21.5vmin;
+  height: 6vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.25vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body #body-left .container .front::after {
+  content: "";
+  position: absolute;
+  width: 21.5vmin;
+  height: 16.5vmin;
+  background-color: #cd4255;
+  background-image: linear-gradient(to bottom, #0000, #ad2e40);
+  transform: translate3d(0vmin, -5.25vmin, 0.01vmin);
+  clip-path: polygon(0 0, 0 16.5vmin, 0.5vmin 16.5vmin, 0.5vmin 0.5vmin, 21vmin 0.5vmin, 21vmin 10.5vmin, 0.5vmin 10.5vmin, 0.5vmin 16.5vmin, 21.5vmin 16.5vmin, 21.5vmin 0);
+}
+body .scene .van .body #body-shelf {
+  width: 20.45vmin;
+  height: 0.5vmin;
+  transform: translate3d(0.75vmin, -7vmin, 4.75vmin);
+}
+body .scene .van .body #body-shelf .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body #body-shelf .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body #body-shelf .container .left {
+  width: 4vmin;
+  height: 0.5vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2vmin);
+}
+body .scene .van .body #body-shelf .container .right {
+  width: 4vmin;
+  height: 0.5vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2vmin) translateZ(20.45vmin);
+}
+body .scene .van .body #body-shelf .container .top {
+  background-color: white;
+  width: 20.45vmin;
+  height: 4vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2vmin) translateZ(0.5vmin);
+}
+body .scene .van .body #body-shelf .container .bottom {
+  background-color: white;
+  width: 20.45vmin;
+  height: 4vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2vmin);
+}
+body .scene .van .body #body-shelf .container .front {
+  background-color: #e1e1e1;
+  width: 20.45vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2vmin);
+}
+body .scene .van .body #body-shelf .container .back {
+  background-color: #e1e1e1;
+  width: 20.45vmin;
+  height: 0.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body #body-shelf .container .top {
+  box-shadow: inset 0 0 1.5vmin #0004;
+}
+body .scene .van .body .bookshelf {
+  width: 20.5vmin;
+  height: 14vmin;
+  transform: translate3d(0.75vmin, -1.05vmin, -6vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back {
+  width: 20.5vmin;
+  height: 14vmin;
+  transform: translate3d(0vmin, 0vmin, 0.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-back .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-back .container .left {
+  width: 1vmin;
+  height: 14vmin;
+  background-color: #33366b;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back .container .right {
+  width: 1vmin;
+  height: 14vmin;
+  background-color: #33366b;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.5vmin) translateZ(20.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back .container .top {
+  background-color: #3b3f7c;
+  width: 20.5vmin;
+  height: 1vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.5vmin) translateZ(14vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back .container .bottom {
+  background-color: #3b3f7c;
+  width: 20.5vmin;
+  height: 1vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back .container .front {
+  background-color: #25284f;
+  width: 20.5vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-back .container .back {
+  background-color: #25284f;
+  width: 20.5vmin;
+  height: 14vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-left {
+  width: 0.2vmin;
+  height: 14vmin;
+  transform: translate3d(0vmin, 0vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-left .container .left {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-left .container .right {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-left .container .top {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(14vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-left .container .bottom {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-left .container .front {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-left .container .back {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-right {
+  width: 0.2vmin;
+  height: 14vmin;
+  transform: translate3d(20.5vmin, 0vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-right .container .left {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-right .container .right {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-right .container .top {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(14vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-right .container .bottom {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-right .container .front {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-right .container .back {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-top {
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform: translate3d(0vmin, -14vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-top .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-top .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-top .container .left {
+  width: 5vmin;
+  height: 0.2vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-top .container .right {
+  width: 5vmin;
+  height: 0.2vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(20.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-top .container .top {
+  background-color: #222548;
+  width: 20.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-top .container .bottom {
+  background-color: #222548;
+  width: 20.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-top .container .front {
+  background-color: #0d0e1b;
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-top .container .back {
+  background-color: #0d0e1b;
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left {
+  width: 0.2vmin;
+  height: 14vmin;
+  transform: translate3d(6.8vmin, 0vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container .left {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container .right {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container .top {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(14vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container .bottom {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container .front {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-left .container .back {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right {
+  width: 0.2vmin;
+  height: 14vmin;
+  transform: translate3d(13.5vmin, 0vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container .left {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container .right {
+  width: 5vmin;
+  height: 14vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container .top {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(14vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container .bottom {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container .front {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-vertical-right .container .back {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 14vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top {
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform: translate3d(0vmin, -10vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container .left {
+  width: 5vmin;
+  height: 0.2vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container .right {
+  width: 5vmin;
+  height: 0.2vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(20.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container .top {
+  background-color: #222548;
+  width: 20.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container .bottom {
+  background-color: #222548;
+  width: 20.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container .front {
+  background-color: #0d0e1b;
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-top .container .back {
+  background-color: #0d0e1b;
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom {
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform: translate3d(0vmin, -6vmin, 2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container .left {
+  width: 5vmin;
+  height: 0.2vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container .right {
+  width: 5vmin;
+  height: 0.2vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(20.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container .top {
+  background-color: #222548;
+  width: 20.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container .bottom {
+  background-color: #222548;
+  width: 20.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container .front {
+  background-color: #0d0e1b;
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-horizontal-bottom .container .back {
+  background-color: #0d0e1b;
+  width: 20.5vmin;
+  height: 0.2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom {
+  width: 20.5vmin;
+  height: 0.75vmin;
+  transform: translate3d(0vmin, 0vmin, 6vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container .left {
+  width: 12vmin;
+  height: 0.75vmin;
+  background-color: #0a0a14;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-6vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container .right {
+  width: 12vmin;
+  height: 0.75vmin;
+  background-color: #0a0a14;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-6vmin) translateZ(20.5vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container .top {
+  background-color: #121326;
+  width: 20.5vmin;
+  height: 12vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(6vmin) translateZ(0.75vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container .bottom {
+  background-color: #121326;
+  width: 20.5vmin;
+  height: 12vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(6vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container .front {
+  background-color: black;
+  width: 20.5vmin;
+  height: 0.75vmin;
+  transform-origin: bottom left;
+  transform: translateZ(6vmin);
+}
+body .scene .van .body .bookshelf #bookshelf-bottom .container .back {
+  background-color: black;
+  width: 20.5vmin;
+  height: 0.75vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(6vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .cartons #carton-1 {
+  width: 3vmin;
+  height: 2vmin;
+  transform: translate3d(3vmin, -7.5vmin, -2vmin) rotateY(-3deg);
+}
+body .scene .van .body .cartons #carton-1 .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .cartons #carton-1 .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .cartons #carton-1 .container .left {
+  width: 3vmin;
+  height: 2vmin;
+  background-color: #C28239;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-1.5vmin);
+}
+body .scene .van .body .cartons #carton-1 .container .right {
+  width: 3vmin;
+  height: 2vmin;
+  background-color: #C28239;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-1.5vmin) translateZ(3vmin);
+}
+body .scene .van .body .cartons #carton-1 .container .top {
+  background-color: #ca8e4b;
+  width: 3vmin;
+  height: 3vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(1.5vmin) translateZ(2vmin);
+}
+body .scene .van .body .cartons #carton-1 .container .bottom {
+  background-color: #ca8e4b;
+  width: 3vmin;
+  height: 3vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(1.5vmin);
+}
+body .scene .van .body .cartons #carton-1 .container .front {
+  background-color: #a26d30;
+  width: 3vmin;
+  height: 2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(1.5vmin);
+}
+body .scene .van .body .cartons #carton-1 .container .back {
+  background-color: #a26d30;
+  width: 3vmin;
+  height: 2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(1.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .cartons #carton-2 {
+  width: 3vmin;
+  height: 2vmin;
+  transform: translate3d(8.7vmin, -7.5vmin, -2vmin);
+}
+body .scene .van .body .cartons #carton-2 .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .cartons #carton-2 .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .cartons #carton-2 .container .left {
+  width: 3vmin;
+  height: 2vmin;
+  background-color: #C28239;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-1.5vmin);
+}
+body .scene .van .body .cartons #carton-2 .container .right {
+  width: 3vmin;
+  height: 2vmin;
+  background-color: #C28239;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-1.5vmin) translateZ(3vmin);
+}
+body .scene .van .body .cartons #carton-2 .container .top {
+  background-color: #ca8e4b;
+  width: 3vmin;
+  height: 3vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(1.5vmin) translateZ(2vmin);
+}
+body .scene .van .body .cartons #carton-2 .container .bottom {
+  background-color: #ca8e4b;
+  width: 3vmin;
+  height: 3vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(1.5vmin);
+}
+body .scene .van .body .cartons #carton-2 .container .front {
+  background-color: #a26d30;
+  width: 3vmin;
+  height: 2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(1.5vmin);
+}
+body .scene .van .body .cartons #carton-2 .container .back {
+  background-color: #a26d30;
+  width: 3vmin;
+  height: 2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(1.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .cartons #carton-3 {
+  width: 3vmin;
+  height: 2vmin;
+  transform: translate3d(16vmin, -7.5vmin, -2vmin) rotateY(5deg);
+}
+body .scene .van .body .cartons #carton-3 .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .cartons #carton-3 .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .cartons #carton-3 .container .left {
+  width: 3vmin;
+  height: 2vmin;
+  background-color: #C28239;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-1.5vmin);
+}
+body .scene .van .body .cartons #carton-3 .container .right {
+  width: 3vmin;
+  height: 2vmin;
+  background-color: #C28239;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-1.5vmin) translateZ(3vmin);
+}
+body .scene .van .body .cartons #carton-3 .container .top {
+  background-color: #ca8e4b;
+  width: 3vmin;
+  height: 3vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(1.5vmin) translateZ(2vmin);
+}
+body .scene .van .body .cartons #carton-3 .container .bottom {
+  background-color: #ca8e4b;
+  width: 3vmin;
+  height: 3vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(1.5vmin);
+}
+body .scene .van .body .cartons #carton-3 .container .front {
+  background-color: #a26d30;
+  width: 3vmin;
+  height: 2vmin;
+  transform-origin: bottom left;
+  transform: translateZ(1.5vmin);
+}
+body .scene .van .body .cartons #carton-3 .container .back {
+  background-color: #a26d30;
+  width: 3vmin;
+  height: 2vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(1.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 {
+  width: 2vmin;
+  height: 2vmin;
+  transform: translate3d(3vmin, -11.5vmin, -1.5vmin) rotateZ(90deg) rotateY(-3deg);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 .container::before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #e67a6b;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 .container::after {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #e67a6b;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin) translateZ(2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(1) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(10deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(2) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(20deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(3) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(30deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(4) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(40deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(5) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(50deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(6) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(60deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(7) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(70deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(8) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(80deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(9) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(90deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(10) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(100deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(11) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(110deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(12) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(120deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(13) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(130deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(14) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(140deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(15) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(150deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(16) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(160deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(17) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(170deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(18) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(180deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(19) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(190deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(20) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(200deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(21) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(210deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(22) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(220deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(23) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(230deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(24) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(240deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(25) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(250deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(26) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(260deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(27) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(270deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(28) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(280deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(29) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(290deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(30) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(300deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(31) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(310deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(32) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(320deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(33) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(330deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(34) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(340deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(35) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(350deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 span:nth-child(36) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #E26755;
+  transform: translateY(-0.9179695252vmin) rotateX(360deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 .container span {
+  background-image: linear-gradient(to left, #0000 80%, #b3311e 81% 100%);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-1 .container::before {
+  background: #b3311e;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 {
+  width: 2vmin;
+  height: 2vmin;
+  transform: translate3d(10vmin, -11.5vmin, -2vmin) rotateZ(90deg) rotateY(-3deg);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 .container::before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #f6c368;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 .container::after {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #f6c368;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin) translateZ(2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(1) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(10deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(2) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(20deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(3) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(30deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(4) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(40deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(5) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(50deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(6) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(60deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(7) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(70deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(8) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(80deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(9) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(90deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(10) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(100deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(11) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(110deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(12) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(120deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(13) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(130deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(14) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(140deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(15) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(150deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(16) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(160deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(17) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(170deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(18) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(180deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(19) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(190deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(20) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(200deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(21) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(210deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(22) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(220deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(23) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(230deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(24) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(240deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(25) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(250deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(26) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(260deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(27) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(270deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(28) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(280deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(29) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(290deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(30) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(300deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(31) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(310deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(32) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(320deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(33) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(330deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(34) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(340deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(35) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(350deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 span:nth-child(36) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #F5B950;
+  transform: translateY(-0.9179695252vmin) rotateX(360deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 .container span {
+  background-image: linear-gradient(to left, #0000 80%, #d38b0c 81% 100%);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-2 .container::before {
+  background: #d38b0c;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 {
+  width: 2vmin;
+  height: 2vmin;
+  transform: translate3d(16vmin, -11.5vmin, -3vmin) rotateZ(90deg) rotateY(-3deg);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 .container::before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #50baa3;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 .container::after {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #50baa3;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin) translateZ(2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(1) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(10deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(2) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(20deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(3) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(30deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(4) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(40deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(5) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(50deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(6) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(60deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(7) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(70deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(8) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(80deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(9) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(90deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(10) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(100deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(11) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(110deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(12) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(120deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(13) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(130deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(14) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(140deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(15) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(150deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(16) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(160deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(17) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(170deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(18) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(180deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(19) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(190deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(20) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(200deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(21) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(210deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(22) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(220deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(23) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(230deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(24) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(240deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(25) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(250deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(26) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(260deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(27) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(270deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(28) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(280deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(29) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(290deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(30) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(300deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(31) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(310deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(32) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(320deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(33) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(330deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(34) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(340deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(35) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(350deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 span:nth-child(36) {
+  width: 2vmin;
+  height: 0.1745329252vmin;
+  background: #44AC96;
+  transform: translateY(-0.9179695252vmin) rotateX(360deg) translateZ(1vmin);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 .container span {
+  background-image: linear-gradient(to left, #0000 80%, #276356 81% 100%);
+}
+body .scene .van .body .glasses-bookshelf #glass-bookshelf-3 .container::before {
+  background: #276356;
+}
+body .scene .van .body .body-roof #body-roof-front {
+  width: 11vmin;
+  height: 0.5vmin;
+  transform: translate3d(0.25vmin, -17vmin, 0vmin);
+}
+body .scene .van .body .body-roof #body-roof-front .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .body-roof #body-roof-front .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .body-roof #body-roof-front .container .left {
+  width: 13.5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-6.75vmin);
+}
+body .scene .van .body .body-roof #body-roof-front .container .right {
+  width: 13.5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-6.75vmin) translateZ(11vmin);
+}
+body .scene .van .body .body-roof #body-roof-front .container .top {
+  background-color: #d76a79;
+  width: 11vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(6.75vmin) translateZ(0.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-front .container .bottom {
+  background-color: #d76a79;
+  width: 11vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(6.75vmin);
+}
+body .scene .van .body .body-roof #body-roof-front .container .front {
+  background-color: #c9364a;
+  width: 11vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(6.75vmin);
+}
+body .scene .van .body .body-roof #body-roof-front .container .back {
+  background-color: #c9364a;
+  width: 11vmin;
+  height: 0.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(6.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .body-roof #body-roof-front .container .top::after {
+  content: "";
+  position: absolute;
+  width: 21.5vmin;
+  height: 13.5vmin;
+  background-color: #D25667;
+  background-image: linear-gradient(to left, #0000, #cd4255), linear-gradient(to top, #0000, #cd4255);
+  transform: translate3d(5.25vmin, 0vmin, 0.01vmin);
+  clip-path: polygon(0 0, 0 13.5vmin, 11vmin 13.5vmin, 11vmin 5vmin, 17.5vmin 5vmin, 17.5vmin 8.5vmin, 11vmin 8.5vmin, 11vmin 13.5vmin, 21.5vmin 13.5vmin, 21.5vmin 0);
+}
+body .scene .van .body .body-roof #body-roof-back {
+  width: 4vmin;
+  height: 0.5vmin;
+  transform: translate3d(17.75vmin, -17vmin, 0vmin);
+}
+body .scene .van .body .body-roof #body-roof-back .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .body-roof #body-roof-back .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .body-roof #body-roof-back .container .left {
+  width: 13.5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-6.75vmin);
+}
+body .scene .van .body .body-roof #body-roof-back .container .right {
+  width: 13.5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-6.75vmin) translateZ(4vmin);
+}
+body .scene .van .body .body-roof #body-roof-back .container .top {
+  background-color: #d76a79;
+  width: 4vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(6.75vmin) translateZ(0.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-back .container .bottom {
+  background-color: #d76a79;
+  width: 4vmin;
+  height: 13.5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(6.75vmin);
+}
+body .scene .van .body .body-roof #body-roof-back .container .front {
+  background-color: #c9364a;
+  width: 4vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(6.75vmin);
+}
+body .scene .van .body .body-roof #body-roof-back .container .back {
+  background-color: #c9364a;
+  width: 4vmin;
+  height: 0.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(6.75vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .body-roof #body-roof-left {
+  width: 6.5vmin;
+  height: 0.5vmin;
+  transform: translate3d(11.25vmin, -17vmin, 4.25vmin);
+}
+body .scene .van .body .body-roof #body-roof-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .body-roof #body-roof-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .body-roof #body-roof-left .container .left {
+  width: 5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-left .container .right {
+  width: 5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(6.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-left .container .top {
+  background-color: #d76a79;
+  width: 6.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(0.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-left .container .bottom {
+  background-color: #d76a79;
+  width: 6.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-left .container .front {
+  background-color: #c9364a;
+  width: 6.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-left .container .back {
+  background-color: #c9364a;
+  width: 6.5vmin;
+  height: 0.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .body-roof #body-roof-right {
+  width: 6.5vmin;
+  height: 0.5vmin;
+  transform: translate3d(11.25vmin, -17vmin, -4.25vmin);
+}
+body .scene .van .body .body-roof #body-roof-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .body-roof #body-roof-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .body-roof #body-roof-right .container .left {
+  width: 5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-2.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-right .container .right {
+  width: 5vmin;
+  height: 0.5vmin;
+  background-color: #D25667;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-2.5vmin) translateZ(6.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-right .container .top {
+  background-color: #d76a79;
+  width: 6.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(2.5vmin) translateZ(0.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-right .container .bottom {
+  background-color: #d76a79;
+  width: 6.5vmin;
+  height: 5vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(2.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-right .container .front {
+  background-color: #c9364a;
+  width: 6.5vmin;
+  height: 0.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(2.5vmin);
+}
+body .scene .van .body .body-roof #body-roof-right .container .back {
+  background-color: #c9364a;
+  width: 6.5vmin;
+  height: 0.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(2.5vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .body-roof #body-roof-window {
+  width: 3.5vmin;
+  height: 6.5vmin;
+  background-color: #8FBAD5CC;
+  transform-origin: bottom;
+  transform: translate3d(9.5vmin, -17.25vmin, 0vmin) rotateY(90deg) rotateX(-90deg);
+}
+body .scene .van .body .body-roof #body-roof-chimney {
+  width: 1vmin;
+  height: 2vmin;
+  transform: translate3d(3.5vmin, -17vmin, 0vmin) rotateZ(90deg);
+}
+body .scene .van .body .body-roof #body-roof-chimney .container::before {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #cd4255;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .body-roof #body-roof-chimney .container::after {
+  content: "";
+  position: absolute;
+  width: 2vmin;
+  height: 2vmin;
+  background: #cd4255;
+  transform: translateY(-2vmin) rotateY(90deg) translateZ(-1vmin) translateZ(1vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(1) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(10deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(2) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(20deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(3) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(30deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(4) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(40deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(5) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(50deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(6) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(60deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(7) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(70deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(8) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(80deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(9) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(90deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(10) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(100deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(11) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(110deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(12) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(120deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(13) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(130deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(14) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(140deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(15) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(150deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(16) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(160deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(17) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(170deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(18) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(180deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(19) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(190deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(20) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(200deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(21) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(210deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(22) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(220deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(23) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(230deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(24) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(240deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(25) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(250deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(26) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(260deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(27) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(270deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(28) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(280deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(29) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(290deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(30) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(300deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(31) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(310deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(32) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(320deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(33) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(330deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(34) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(340deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(35) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(350deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney span:nth-child(36) {
+  width: 1vmin;
+  height: 0.1745329252vmin;
+  background: #c13447;
+  transform: translateY(-0.9179695252vmin) rotateX(360deg) translateZ(1vmin);
+}
+body .scene .van .body .body-roof #body-roof-chimney .container::before {
+  background-image: radial-gradient(circle, #0005 50%, transparent 55% 100%);
+}
+body .scene .van .body .body-roof #body-roof-chimney .container::after {
+  box-shadow: 0 0 0.5vmin #0005;
+}
+body .scene .van .body .canopy-edge {
+  width: 21vmin;
+  height: 1vmin;
+  transform-origin: top;
+  transform: translate3d(0.5vmin, -16.1vmin, 6.75vmin) rotateX(70deg);
+}
+body .scene .van .body .canopy-edge #body-canopy-edge {
+  width: 21vmin;
+  height: 1vmin;
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container .left {
+  width: 0.15vmin;
+  height: 1vmin;
+  background-color: #cd4255;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.075vmin);
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container .right {
+  width: 0.15vmin;
+  height: 1vmin;
+  background-color: #cd4255;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.075vmin) translateZ(21vmin);
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container .top {
+  background-color: #d25667;
+  width: 21vmin;
+  height: 0.15vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.075vmin) translateZ(1vmin);
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container .bottom {
+  background-color: #d25667;
+  width: 21vmin;
+  height: 0.15vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.075vmin);
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container .front {
+  background-color: #b53043;
+  width: 21vmin;
+  height: 1vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.075vmin);
+}
+body .scene .van .body .canopy-edge #body-canopy-edge .container .back {
+  background-color: #b53043;
+  width: 21vmin;
+  height: 1vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.075vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .canopy {
+  width: 20.5vmin;
+  height: 9.5vmin;
+  transform-origin: top;
+  transform: translate3d(0.75vmin, -7.5vmin, 6.75vmin) rotateX(35deg);
+  animation: moveCanopy 7s ease-in-out infinite alternate;
+}
+@keyframes moveCanopy {
+  0%, 10%, 30% {
+    transform: translate3d(0.75vmin, -7.5vmin, 6.75vmin) rotateX(0deg);
+  }
+  50% {
+    transform: translate3d(0.75vmin, -7.5vmin, 6.75vmin) rotateX(85deg);
+  }
+  55%, 100% {
+    transform: translate3d(0.75vmin, -7.5vmin, 6.75vmin) rotateX(70deg);
+  }
+}
+body .scene .van .body .canopy #body-canopy-main {
+  width: 20.5vmin;
+  height: 9.5vmin;
+}
+body .scene .van .body .canopy #body-canopy-main .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .canopy #body-canopy-main .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .canopy #body-canopy-main .container .left {
+  width: 0.1vmin;
+  height: 9.5vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.05vmin);
+}
+body .scene .van .body .canopy #body-canopy-main .container .right {
+  width: 0.1vmin;
+  height: 9.5vmin;
+  background-color: #F5F5F5;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.05vmin) translateZ(20.5vmin);
+}
+body .scene .van .body .canopy #body-canopy-main .container .top {
+  background-color: white;
+  width: 20.5vmin;
+  height: 0.1vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.05vmin) translateZ(9.5vmin);
+}
+body .scene .van .body .canopy #body-canopy-main .container .bottom {
+  background-color: white;
+  width: 20.5vmin;
+  height: 0.1vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.05vmin);
+}
+body .scene .van .body .canopy #body-canopy-main .container .front {
+  background-color: #e1e1e1;
+  width: 20.5vmin;
+  height: 9.5vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.05vmin);
+}
+body .scene .van .body .canopy #body-canopy-main .container .back {
+  background-color: #e1e1e1;
+  width: 20.5vmin;
+  height: 9.5vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.05vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .canopy #body-canopy-main .container .front, body .scene .van .body .canopy #body-canopy-main .container .back, body .scene .van .body .canopy #body-canopy-main .container .top, body .scene .van .body .canopy #body-canopy-main .container .bottom {
+  background-image: repeating-linear-gradient(to right, #0000 20%, #D25667 20% 40%, #0000 40% 60%);
+}
+body .scene .van .body .canopy #body-canopy-main .container .front {
+  box-shadow: inset 0 0 2.5vmin #0003;
+}
+body .scene .van .body .poles .pole-left {
+  width: 2vmin;
+  height: 9vmin;
+  transform-origin: bottom;
+  transform: translate3d(1vmin, -7.5vmin, 6vmin) rotateX(-2deg);
+  animation: rotPoleLeft 7s ease-in-out infinite alternate;
+}
+@keyframes rotPoleLeft {
+  0%, 10%, 40% {
+    transform: translate3d(1vmin, -7.5vmin, 6vmin) rotateX(-2deg);
+  }
+  50%, 100% {
+    transform: translate3d(1vmin, -7.5vmin, 6vmin) rotateX(-20deg);
+  }
+}
+body .scene .van .body .poles .pole-left #pole-left {
+  width: 0.2vmin;
+  height: 9vmin;
+  transform: translate3d(0vmin, 0vmin, 0vmin);
+}
+body .scene .van .body .poles .pole-left #pole-left .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .poles .pole-left #pole-left .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .poles .pole-left #pole-left .container .left {
+  width: 0.2vmin;
+  height: 9vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.1vmin);
+}
+body .scene .van .body .poles .pole-left #pole-left .container .right {
+  width: 0.2vmin;
+  height: 9vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.1vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .poles .pole-left #pole-left .container .top {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.1vmin) translateZ(9vmin);
+}
+body .scene .van .body .poles .pole-left #pole-left .container .bottom {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.1vmin);
+}
+body .scene .van .body .poles .pole-left #pole-left .container .front {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 9vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.1vmin);
+}
+body .scene .van .body .poles .pole-left #pole-left .container .back {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 9vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.1vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .poles .pole-right {
+  width: 2vmin;
+  height: 9vmin;
+  transform-origin: bottom;
+  transform: translate3d(20.75vmin, -7.5vmin, 6vmin) rotateX(-2deg);
+  animation: rotPoleRight 7s ease-in-out infinite alternate;
+}
+@keyframes rotPoleRight {
+  0%, 10%, 40% {
+    transform: translate3d(20.75vmin, -7.5vmin, 6vmin) rotateX(-2deg);
+  }
+  50%, 100% {
+    transform: translate3d(20.75vmin, -7.5vmin, 6vmin) rotateX(-20deg);
+  }
+}
+body .scene .van .body .poles .pole-right #pole-right {
+  width: 0.2vmin;
+  height: 9vmin;
+  transform: translate3d(0vmin, 0vmin, 0vmin);
+}
+body .scene .van .body .poles .pole-right #pole-right .container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .scene .van .body .poles .pole-right #pole-right .container * {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .scene .van .body .poles .pole-right #pole-right .container .left {
+  width: 0.2vmin;
+  height: 9vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(-90deg) translateX(-0.1vmin);
+}
+body .scene .van .body .poles .pole-right #pole-right .container .right {
+  width: 0.2vmin;
+  height: 9vmin;
+  background-color: #1A1C37;
+  transform-origin: left top;
+  transform: rotateY(90deg) translateX(-0.1vmin) translateZ(0.2vmin);
+}
+body .scene .van .body .poles .pole-right #pole-right .container .top {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(90deg) translateY(0.1vmin) translateZ(9vmin);
+}
+body .scene .van .body .poles .pole-right #pole-right .container .bottom {
+  background-color: #222548;
+  width: 0.2vmin;
+  height: 0.2vmin;
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateY(0.1vmin);
+}
+body .scene .van .body .poles .pole-right #pole-right .container .front {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 9vmin;
+  transform-origin: bottom left;
+  transform: translateZ(0.1vmin);
+}
+body .scene .van .body .poles .pole-right #pole-right .container .back {
+  background-color: #0d0e1b;
+  width: 0.2vmin;
+  height: 9vmin;
+  transform-origin: center;
+  transform: rotateY(180deg) translateZ(0.1vmin) rotateX(180deg) rotateZ(180deg);
+}
+body .scene .van .body .wheels-back {
+  width: 4vmin;
+  height: 4vmin;
+  transform: translateY(2.5vmin) translateX(15vmin);
+  animation: rotWheelBack 1s linear infinite;
+}
+@keyframes rotWheelBack {
+  to {
+    transform: translateY(2.5vmin) translateX(15vmin) rotateZ(-360deg);
+  }
+}
+body .scene .van .body .wheels-back #wheel-back-left {
+  width: 2vmin;
+  height: 4vmin;
+  transform: translate3d(1vmin, 0vmin, 4vmin) rotateY(90deg);
+}
+body .scene .van .body .wheels-back #wheel-back-left .container::before {
+  content: "";
+  position: absolute;
+  width: 4vmin;
+  height: 4vmin;
+  background: #222548;
+  transform: translateY(-4vmin) rotateY(90deg) translateZ(-2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .wheels-back #wheel-back-left .container::after {
+  content: "";
+  position: absolute;
+  width: 4vmin;
+  height: 4vmin;
+  background: #222548;
+  transform: translateY(-4vmin) rotateY(90deg) translateZ(-2vmin) translateZ(2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(1) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(10deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(2) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(20deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(3) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(30deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(4) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(40deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(5) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(50deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(6) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(60deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(7) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(70deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(8) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(80deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(9) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(90deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(10) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(100deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(11) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(110deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(12) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(120deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(13) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(130deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(14) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(140deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(15) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(150deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(16) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(160deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(17) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(170deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(18) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(180deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(19) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(190deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(20) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(200deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(21) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(210deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(22) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(220deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(23) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(230deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(24) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(240deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(25) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(250deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(26) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(260deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(27) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(270deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(28) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(280deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(29) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(290deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(30) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(300deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(31) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(310deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(32) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(320deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(33) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(330deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(34) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(340deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(35) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(350deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left span:nth-child(36) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(360deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-left .container span:nth-child(3n) {
+  border-top: 1px solid #2a2e5a;
+}
+body .scene .van .body .wheels-back #wheel-back-left .container::after, body .scene .van .body .wheels-back #wheel-back-left .container::before {
+  background-image: radial-gradient(circle at 50% 30%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 50% 70%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 30% 50%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 70% 50%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle, #1A1C37, 15%, #e8e8e8 17% 40%, #1A1C37 42% 100%);
+}
+body .scene .van .body .wheels-back #wheel-back-right {
+  width: 2vmin;
+  height: 4vmin;
+  transform: translate3d(1vmin, 0vmin, -4vmin) rotateY(90deg);
+}
+body .scene .van .body .wheels-back #wheel-back-right .container::before {
+  content: "";
+  position: absolute;
+  width: 4vmin;
+  height: 4vmin;
+  background: #222548;
+  transform: translateY(-4vmin) rotateY(90deg) translateZ(-2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .wheels-back #wheel-back-right .container::after {
+  content: "";
+  position: absolute;
+  width: 4vmin;
+  height: 4vmin;
+  background: #222548;
+  transform: translateY(-4vmin) rotateY(90deg) translateZ(-2vmin) translateZ(2vmin);
+  border-radius: 50%;
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(1) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(10deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(2) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(20deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(3) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(30deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(4) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(40deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(5) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(50deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(6) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(60deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(7) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(70deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(8) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(80deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(9) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(90deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(10) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(100deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(11) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(110deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(12) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(120deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(13) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(130deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(14) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(140deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(15) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(150deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(16) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(160deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(17) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(170deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(18) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(180deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(19) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(190deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(20) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(200deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(21) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(210deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(22) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(220deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(23) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(230deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(24) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(240deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(25) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(250deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(26) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(260deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(27) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(270deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(28) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(280deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(29) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(290deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(30) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(300deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(31) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(310deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(32) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(320deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(33) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(330deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(34) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(340deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(35) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(350deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right span:nth-child(36) {
+  width: 2vmin;
+  height: 0.3490658504vmin;
+  background: #1A1C37;
+  transform: translateY(-1.8359390503vmin) rotateX(360deg) translateZ(2vmin);
+}
+body .scene .van .body .wheels-back #wheel-back-right .container span:nth-child(3n) {
+  border-top: 1px solid #2a2e5a;
+}
+body .scene .van .body .wheels-back #wheel-back-right .container::after, body .scene .van .body .wheels-back #wheel-back-right .container::before {
+  background-image: radial-gradient(circle at 50% 30%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 50% 70%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 30% 50%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle at 70% 50%, #1A1C37 5%, transparent 6% 100%), radial-gradient(circle, #1A1C37, 15%, #e8e8e8 17% 40%, #1A1C37 42% 100%);
+}
