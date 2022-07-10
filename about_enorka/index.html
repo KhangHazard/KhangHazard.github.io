@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Enorka</title>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader">
+		<svg width="200" height="200" viewBox="0 0 40 60">
+			<polygon class="triangle" fill="none" stroke="#fff" stroke-width="1" points="16,1 32,32 1,32"/>
+			<text class="loading" x="0" y="45" fill="#fff" >Loading...</text>
+		</svg>
+    </div>
+    
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+    <section>
+        <div class="container">
+            <div class="grid">
+                <div class="left">
+                    <img src="enorka.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h1> Enorka Computer components manufacturing company</h1>
+                    <p>This is my first personal project. Eagles and energy cores? It's funny how I couldn't come up with such a weird idea. And this is the first project I realized that sometimes ideas are many and very good, but when implemented in practice, they are not very satisfactory.</p>
+                    <a href="enorka/index.html" class="btn">View details</a>    
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        </script>
+</body>
+</html>
