@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About VITECH</title>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader">
+        <div class="loading-box">
+            <p class="loading-title">Loading</p>
+            <div class="loading-circle">
+              <p class="loading-count"><span id="loadingNumber">0</span>%</p>
+            </div>
+          </div>
+    </div>
+    
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+    <section>
+        <div class="container">
+            <div class="grid">
+                <div class="left">
+                    <img src="vitech.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h1>VITECH Computer components manufacturing corporation</h1>
+                    <p>This is the first project that I have been assigned to do with my team. I remember at that time within my group a few things happened that I still laugh when I recall it now: there were so many ideas that I couldn't choose which one was satisfactory, the group's message was like a battlefield, one week behind schedule,... In short, through this project, I know where my energy is and what I should do.</p>
+                    <a href="vitech/index.html" class="btn">View details</a>    
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 16000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        </script>   
+    <script>
+        const loadingNumber = document.querySelector('#loadingNumber');
+const loadingCircle = document.querySelector('.loading-circle');
+let load = 0;
+
+setInterval(updateLoader, 150);
+
+function updateLoader() {
+  load += (load < 100);
+  loadingNumber.innerHTML = load;
+  loadingCircle.style.background = 'conic-gradient(from 0deg at 50% 50%, rgba(111, 123, 247, 1) 0%, rgba(155, 248, 244, 1) ' + load + '%, #101012 ' + load + '%)'
+}
+    </script>     
+</body>
+</html>
