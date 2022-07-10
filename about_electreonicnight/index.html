@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Electronic Night</title>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader">
+        <div class="contain">
+            <!-- stars -->
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <!-- clouds -->
+            <div class="cloud-group-1">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+              <div class="cloud cloud-4"></div>
+              <div class="cloud cloud-5"></div>
+              <div class="cloud cloud-6"></div>
+            </div>
+            <div class="cloud-group-2">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+              <div class="cloud cloud-4"></div>
+              <div class="cloud cloud-5"></div>
+              <div class="cloud cloud-6"></div>
+            </div>
+            <div class="cloud-group-3">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+              <div class="cloud cloud-4"></div>
+              <div class="cloud cloud-5"></div>
+              <div class="cloud cloud-6"></div>
+            </div>
+            <!-- orbits -->
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+            <div class="orbit orbit-4"></div>
+            <div class="orbit orbit-5"></div>
+            <div class="orbit orbit-6"></div>
+            <!-- main planet -->
+            <div class="ring-before"></div>
+            <div class="ring-bigger-before"></div>
+            <div class="planet"></div>
+            <div class="ring-after"></div>
+            <div class="ring-bigger-after"></div>
+            <!-- sub planet -->
+            <div class="sub-planet"></div>
+          </div>
+    </div>
+    
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+    <section>
+        <div class="container">
+            <div class="grid">
+                <div class="left">
+                    <img src="Poster.png" alt="">
+                </div>
+                <div class="right">
+                    <h1>Electronic Night Music Event</h1>
+                    <p>What should I say about this poster? Well, this poster marks my entry into the design profession. As well as the moment that marked the first time I learned a truth in the design industry. You want to know right? But I won't say anything, don't expect to do anything :))</p>
+                    <a href="new404/index.html" class="btn">View details</a>    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 6000);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    </script>    
+</body>
+</html>
