@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Another</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+  <div id="loader">
+    <div class="loading">
+      <div class="loading-text">
+        <span class="loading-text-words">L</span>
+        <span class="loading-text-words">O</span>
+        <span class="loading-text-words">A</span>
+        <span class="loading-text-words">D</span>
+        <span class="loading-text-words">I</span>
+        <span class="loading-text-words">N</span>
+        <span class="loading-text-words">G</span>
+      </div>
+    </div>
+  </div>
+  
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+    <div id="hero-slides">
+      <div id="header"></div>
+      <div id="slides-cont">
+        <div id="slides">
+          <div class="slide" style="background-image: url(image/coffee.jpg)">
+            <div class="number">01</div>
+            <div class="body">
+              <div class="headline">Coffee shop</div><a href="coffewebsite/index.html" target="_blank">
+                <div class="link">View more</div></a>
+            </div>
+          </div>
+          <div class="slide" style="background-image: url(image/market.jpg)">
+            <div class="number">02</div>
+            <div class="body">
+              <div class="headline">Organic market</div><a href="market/index.html" target="_blank">
+                <div class="link">View more</div></a>
+            </div>
+          </div>
+          <div class="slide" style="background-image: url(image/traveler.jpg)">
+            <div class="number">03</div>
+            <div class="body">
+              <div class="headline">Traveler</div><a href="travel/index.html" target="_blank">
+                <div class="link">View more</div></a>
+            </div>
+          </div>
+          <div class="slide" style="background-image: url(image/game.jpg)">
+            <div class="number">04</div>
+            <div class="body">
+              <div class="headline">Game forum</div><a href="gameforum/index.html" target="_blank">
+                <div class="link">View more</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 4000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+  </script>
+</body>
+</html>
