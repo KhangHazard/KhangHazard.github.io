@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini web game</title>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+  <div id="loader">
+    <div class="loading-container">
+      <div class="box-loading">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+  </div>
+  
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+   
+<div id="hero-slides">
+    <div id="header">
+    
+    </div>
+    <div id="slides-cont">
+      <div class="button" id="next"></div>
+      <div class="button" id="prev"></div>
+      <div id="slides">
+        <div class="slide" style="background-image: url(image/stick.png)">
+          <div class="number">01</div>
+          <div class="body">
+            <div class="location">08:55-30/06</div>
+            <div class="headline">Stick hero</div><a href="stickhero/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/snake.jpg)">
+          <div class="number">02</div>
+          <div class="body">
+            <div class="location">12:01-01/07</div>
+            <div class="headline">Snake</div><a href="snake/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/towerblock.jpg)">
+          <div class="number">03</div>
+          <div class="body">
+            <div class="location">09:27-02/07</div>
+            <div class="headline">Tower block</div><a href="towerblock/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/maze.jpg)">
+          <div class="number">04</div>
+          <div class="body">
+            <div class="location">18:02-02/07</div>
+            <div class="headline">Maze</div><a href="mazegenerator/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/trainpuzzle.jpg)">
+          <div class="number">05</div>
+          <div class="body">
+            <div class="location">10:34-03/07</div>
+            <div class="headline">Train puzzle</div><a href="towerblock/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/pixel.jpg)">
+          <div class="number">06</div>
+          <div class="body">
+            <div class="location">14:22-03/07</div>
+            <div class="headline">Pixel aventure</div><a href="pixeladventure/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/lighthouse.jpg)">
+          <div class="number">07</div>
+          <div class="body">
+            <div class="location">20:02-03/07</div>
+            <div class="headline">Build a lighthouse</div><a href="buildalighthouse/index.html" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+        <div class="slide" style="background-image: url(image/catmario.jpg)">
+          <div class="number">08</div>
+          <div class="body">
+            <div class="location">19:52-07/07</div>
+            <div class="headline">Cat Mario</div><a href="catmario/docs/index.htm" target="_blank">
+              <div class="link">Play</div></a>
+          </div>
+        </div>
+      </div>
+      <div id="next-catch"></div>
+      <div id="prev-catch"></div>
+    </div>
+</div>
+<script src="main.js"></script><script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+  </script>
+</body>
+</html>

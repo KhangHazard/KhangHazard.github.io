@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+  
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  background: #212121;
+  color: #FFFFFF;
+}
+
+h1, p {
+  text-align: center;
+}
+
+p {
+  font-family: 'Inconsolata', monospace;
+  max-width: 50%;
+  margin: 15px auto;
+}
+
+.game {
+  text-align:center;
+}
+
+svg {
+  border: 10px solid #000000;
+  margin:auto;
+}
+
+.start {
+  fill: orange;
+  animation: glow 2s infinite;
+}
+
+.path {
+  fill: #455A64;
+  transition: fill 1500ms;
+  transition-timing-function: ease-in-out;
+}
+
+.wall {
+  fill: #000
+}
+
+.player {
+  display: block;
+  transition: transform 400ms;
+}
+
+@keyframes glow {
+    0%   {fill: #388E3C;}
+    50%  {fill: #CDDC39;}
+    100% {fill: #388E3C;}
+}
