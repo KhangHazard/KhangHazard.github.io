@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVO</title>
+    <link rel="icon" type="img/x-icon" href="./assets/imgs/Logo/Logo_tabbar.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header_navbar">
+                    <i class="mobile__menu-icon fa-solid fa-bars"></i>
+
+                    <div class="header_navbar-wrapper">
+                        <div class="header__logo">
+                            <a href="#" class="header__logo-link">
+                                <img src="./assets/imgs/logo/Logo.png" alt="" class="header__logo-img">
+                            </a>
+                        </div>
+
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item header__navbar-item-search">
+                                <div class="header__search">
+                                    <input type="text" class="header__search-input" placeholder="Search">
+
+                                    <button class="header__search-btn">
+                                        <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="index.html" class="header__navbar-link">Home</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="aboutuspage.html" class="header__navbar-link">About us</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="productpage.html" class="header__navbar-link">Store</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="newspage.html" class="header__navbar-link">News</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="header__search-wrapper">
+                        <div class="header__search">
+                            <input type="text" class="header__search-input" placeholder="Search">
+                            <button class="header__search-btn">
+                                <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <div class="header__navbar-icon">
+                            <a href="#all" class="header__navbar-icon-link js-buy-ticket">
+                                <i class="header__navbar-icon-account fa-regular fa-user"></i>
+                            </a>
+                            <a href="cartpage.html" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon-cart fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-6 c-12">
+                        <div class="content__checkout">
+                            <h3 class="content__checkout-title wow fadeInUp" data-wow-delay="0">Checkout</h3>
+                            <div class="border-horizontal wow fadeInUp" data-wow-delay="0.2s"></div>
+                            <h4 class="content__checkout-heading wow fadeInUp" data-wow-delay="0.4s">Review And Place Order</h4>
+                            <ul class="content__checkout-list">
+                                <li class="content__checkout-item wow fadeInUp" data-wow-delay=".4s">
+                                    <a href="productdetailpage.html" class="content__checkout-link">
+                                        <div class="content__checkout-img" style="background-image: url(./assets/imgs/cart/thantrung.jpg);"></div>
+                                        <div class="content__checkout-info">
+                                            <span class="content__checkout-info-heading">The Death</span>
+                                            <span class="content__checkout-info-price">$11,99</span>
+                                        </div>                                        
+                                    </a>
+                                    <div class="content__checkout-react">
+                                        <input type="checkbox" class="content__checkout-check"></input>
+                                        <a href="#" class="delete delete1">Delete</a>
+                                    </div>
+                                </li>
+
+                                <li class="content__checkout-item wow fadeInUp" data-wow-delay=".6s">
+                                    <a href="productdetailpage.html" class="content__checkout-link">
+                                        <div class="content__checkout-img" style="background-image: url(./assets/imgs/cart/re_village.png);"></div>
+                                        <div class="content__checkout-info">
+                                            <span class="content__checkout-info-heading">Resident Evil Village</span>
+                                            <div class="price-wrapper">
+                                                <div class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-50%</p>
+                                                </div>
+                                                <div class="price--all">
+                                                    <span class="price--old price--old--sm">$59,99</span>
+                                                    <span class="price--new price--new--sm">$29,99</span>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </a>
+                                    <div class="content__checkout-react">
+                                        <input type="checkbox" class="content__checkout-check"></input>
+                                        <a href="#" class="delete delete2">Delete</a>
+                                    </div>
+                                </li>
+
+                                <li class="content__checkout-item wow fadeInUp" data-wow-delay=".8s">
+                                    <a href="productdetailpage.html" class="content__checkout-link">
+                                        <div class="content__checkout-img" style="background-image: url(./assets/imgs/cart/Assassins-Creed.png);"></div>
+                                        <div class="content__checkout-info">
+                                            <span class="content__checkout-info-heading">Assassin's Creed Syndicate</span>
+                                            <span class="content__checkout-info-price">$20,00</span>
+                                        </div>                                        
+                                    </a>
+                                    <div class="content__checkout-react">
+                                        <input type="checkbox" class="content__checkout-check"></input>
+                                        <a href="#" class="delete delete3">Delete</a>
+                                    </div>
+                                </li>
+
+                                <li class="content__checkout-item wow fadeInUp" data-wow-delay="1s">
+                                    <a href="productdetailpage.html" class="content__checkout-link">
+                                        <div class="content__checkout-img" style="background-image: url(./assets/imgs/cart/ark-338\ 4.png);"></div>
+                                        <div class="content__checkout-info">
+                                            <span class="content__checkout-info-heading">ARK: Survival Evolved</span>
+                                            <div class="price-wrapper">
+                                                <div class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-100%</p>
+                                                </div>
+                                                <div class="price--all">
+                                                    <span class="price--old price--old--sm">$15,00</span>
+                                                    <span class="price--new price--new--sm free">Free</span>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </a>
+                                    <div class="content__checkout-react">
+                                        <input type="checkbox" class="content__checkout-check"></input>
+                                        <a href="#" class="delete delete4">Delete</a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="content__checkout-empty">
+                                <p class="content__checkout-empty-text">Your cart is empty</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col l-6 c-12">
+                        <div class="content__checkout-pay">
+                            <h4 class="content__checkout-pay-title">
+                                Games and Apps Summary
+                            </h4>
+
+                            <div class="content__checkout-pay-count">
+                                <h3 class="content__checkout-pay-count-title">Price</h3>
+                                <span class="content__checkout-pay-count-numbers">$0,00</span>
+                            </div>
+
+                            <div class="content__checkout-pay-count">
+                                <h3 class="content__checkout-pay-count-title">Sale Discount</h3>
+                                <span class="content__checkout-pay-count-numbers">-$0,00</span>
+                            </div>
+
+                            <div class="border-horizontal"></div>
+
+                            <div class="content__checkout-pay-count content__checkout-pay-count-sum">
+                                <h3 class="content__checkout-pay-count-title">Subtotal</h3>
+                                <span class="content__checkout-pay-count-numbers">$0,00</span>
+                            </div>
+
+                            <div class="content__checkout-pay-apps">
+                                <label for="checkbox-radio-1" class="checkbox-radio-wrapper">
+                                    <div class="checkbox-radio-input">
+                                        <input  id="checkbox-radio-1" type="radio" name="radio" class="checkbox-radio">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <i class="content__checkout-pay-apps-icon fa-brands fa-paypal"></i>
+                                    <p class="content__checkout-pay-apps-name">PayPal</p>
+                                </label>
+                            </div>
+
+                            <div class="content__checkout-pay-apps">
+                                <label for="checkbox-radio-2" class="checkbox-radio-wrapper">
+                                    <div class="checkbox-radio-input">
+                                        <input  id="checkbox-radio-2" type="radio" name="radio" class="checkbox-radio">
+                                        <span class="checkmark"></span>
+                                    </div>
+                                    <i class="content__checkout-pay-apps-icon fa-solid fa-credit-card"></i>
+                                    <p class="content__checkout-pay-apps-name">Credit Card</p>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="content__checkout-pay-btn">
+                                PLACE ORDER
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer__container" style="background-image: url(./assets/imgs/homepage/banner/codmw2__footer.png);">
+                <div class="grid wide">
+                    <div class="row footer__header">
+                        <div class="col l-4 c-12">
+                            <div class="footer__logo">
+                                <img src="./assets/imgs/Logo/Logo.png" alt="" class="footer__logo-img">
+                                <p class="footer__logo-text">MOVO is an online distribution platform, digital rights management, multiplayer video game, and internet based social communication service.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="col l-4 c-12">
+                            <div class="footer__headquarter">
+                                <h4 class="footer__headquarter-heading">MOVO Headquarters</h4>
+                                <p class="footer__headquarter-text">1, Ly Tu Trong, Ninh Kieu District, Can Tho City, An Cu, Ninh Kieu, Can Tho, Vietnam.</p>
+                            </div>
+
+                            <div class="footer__contactus">
+                                <h4 class="footer__contactus-heading">Contact us</h4>
+                                <a class="footer__contactus-mail" href="mailto: movo@gmail.com" >movo@gmail.com</a>
+                                <a href="tel: +84 939 888 868" class="footer__contactus-phone">+84 939 888 868</a>
+                            </div>
+
+                            <div class="footer__social">
+                                <a href="https://www.facebook.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="https://twitter.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 c-12">
+                            <div class="footer__comment-tomail">
+                                <label for="" class="footer__comment-tomail--label">Email</label>
+                                <input type="email" id="footer__comment-tomail--input" class="footer__comment-tomail--input" placeholder="Type your email here...">
+                            </div>
+
+                            <div class="footer__comment-message">
+                                <label for="" class="footer__comment-message--label">Message</label>
+                                <input type="text" id="footer__comment-message--input" class="footer__comment-message--input" placeholder="Type your message here...">
+                            </div>
+
+                            <button type="submit" class="footer__btn">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__bottom-text">
+                        &copy 2022 MOVO Corporation.
+                        <a href="" class="footer__bottom-link">Terms of Service</a> |
+                        <a href="" class="footer__bottom-link">Privacy Policy</a> |
+                        <a href="" class="footer__bottom-link">Store Refund Policy</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+                           <!-- FORMS -->
+            <!-- SIGN IN -->
+            <div class="forms form-signin">
+                <div id="signin" class="form__container signin js-form-container-signin">
+                    <form class="form-signin" action="">
+                        <div class="form__close js-form-close-signin">
+                            <i class="form__close-icon fa-solid fa-xmark"></i>
+                        </div>
+        
+                        <header class="form__header">
+                            <p>Sign in</p>
+                        </header>
+        
+                        <div class="form__control">
+                            <label for="usernameSignin" class="form__label">
+                                <i class="sign-icon fa-solid fa-user"></i>
+                                SIGN IN WITH ACCOUNT NAME
+                            </label>
+        
+                            <input id="usernameSignin" type="text" class="form__input">
+                            <small class="small-signin"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="passwordSignin" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                PASSWORD
+                            </label>
+        
+                            <input id="passwordSignin" type="password" class="form__input">
+                            <small class="small-signin"></small>
+                        </div>
+        
+                        <a href="" class="form__forgot">Forgot password?</a>
+        
+                        <button type="submit" id="form__book-btn">
+                            Sign in
+                        </button>
+        
+                        <div class="form__signwith">
+                            <div class="border-horizontal"></div>
+                            <p class="form__signwith-title">Sign in with</p>
+                        </div>
+        
+                        <div class="form__signwith-icon-wrapper">
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-google"></i>
+                            </a>
+                        </div>
+        
+                        <footer class="form__sign-footer">
+                            <p class="form__sign-footer-text">Don't have an account?</p>
+                            <a class="form__sign-footer-link link signup-link" href="#all">Register now</a>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+                
+                    <!-- SIGN UP -->
+            <div class="forms form-signup">
+                <div class="form__container signup js-form-container-signup">
+                    <form class="form-signup" action="">
+                        <div class="form__close js-form-close-signup">
+                            <i class="form__close-icon fa-solid fa-xmark"></i>
+                        </div>
+        
+                        <div class="form__back js-form-back-signin">
+                            <i class="form__back-icon fa-solid fa-arrow-left"></i>
+                        </div>
+        
+                        <header class="form__header">
+                            <p>Sign up</p>
+                        </header>
+        
+                        <div class="form__control">
+                            <label for="usernameSignup" class="form__label">
+                                <i class="sign-icon fa-solid fa-user"></i>
+                                ACCOUNT NAME
+                            </label>
+        
+                            <input id="usernameSignup" type="text" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="email" class="form__label">
+                                <i class="sign-icon fa-solid fa-envelope"></i>
+                                EMAIL
+                            </label>
+        
+                            <input id="email" type="email" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+                        <div class="form__control">
+                            <label for="passwordSignup" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                PASSWORD
+                            </label>
+        
+                            <input id="passwordSignup" type="password" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="re-password" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                RE-ENTER THE PASSWORD
+                            </label>
+        
+                            <input id="re-password" type="password" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <div class="check-box-wrapper">
+                                <input id="check-box" type="checkbox" class="form__input check-box">
+                                <p class="check-box-text">I agree to the <a href="" class="check-box-link">
+                                    Terms of use
+                                </a> 
+                                    and 
+                                <a href="" class="check-box-link">
+                                    Policy
+                                </a>
+                                    .
+                                </p>
+                            </div>
+                            <small class="small-signup"></small>
+                        </div>
+        
+        
+        
+                        <button type="submit" id="form__book-btn">
+                            Sign up
+                        </button>
+        
+                        <div class="form__signwith">
+                            <div class="border-horizontal"></div>
+                            <p class="form__signwith-title">Sign up with</p>
+                        </div>
+        
+                        <div class="form__signwith-icon-wrapper">
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-google"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+    <script src="./assets/javascript/hideItem.js"></script>
+    <!-- <script>
+        var deletedList = document.querySelectorAll('.content__checkout-item');
+        var textNofi = document.querySelector('.content__checkout-empty')
+        // console.log(deletedList)
+
+        deletedList.forEach(function(deleteItem){
+            console.log(deleteItem)
+        })
+        
+        // if(deletedList.length >= 4){
+        //     textNofi.classList.add('show-empty-cart');
+        // }
+
+    </script> -->
+    <script src="./assets/javascript/showMenuMb.js"></script>
+    <script src="./assets/javascript/showform.js"></script>
+    <script src="./assets/javascript/formValid.js"></script>
+    <script src="./assets/javascript/deleteItem.js"></script>
+    <script src="./assets/javascript/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>

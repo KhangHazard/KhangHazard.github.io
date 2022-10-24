@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVO</title>
+    <link rel="icon" type="img/x-icon" href="./assets/imgs/Logo/Logo_tabbar.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header_navbar">
+                    <i class="mobile__menu-icon fa-solid fa-bars"></i>
+
+                    <div class="header_navbar-wrapper">
+                        <div class="header__logo">
+                            <a href="#" class="header__logo-link">
+                                <img src="./assets/imgs/logo/Logo.png" alt="" class="header__logo-img">
+                            </a>
+                        </div>
+
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item header__navbar-item-search">
+                                <div class="header__search">
+                                    <input type="text" class="header__search-input" placeholder="Search">
+
+                                    <button class="header__search-btn">
+                                        <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="index.html" class="header__navbar-link">Home</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="aboutuspage.html" class="header__navbar-link">About us</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="productpage.html" class="header__navbar-link active-link">Store</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="newspage.html" class="header__navbar-link">News</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="header__search-wrapper">
+                        <div class="header__search">
+                            <input type="text" class="header__search-input" placeholder="Search">
+                            <button class="header__search-btn">
+                                <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <div class="header__navbar-icon">
+                            <a href="#all" class="header__navbar-icon-link js-buy-ticket">
+                                <i class="header__navbar-icon-account fa-regular fa-user"></i>
+                            </a>
+                            <a href="cartpage.html" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon-cart fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="grid wide">
+                <h3 class="content__popular-title wow fadeInUp">POPULAR</h3>
+                <div class="content__popular">
+                    <div class="row">
+                        <div class="col l-12 c-12">
+                            <div class="row sm-gutter no-wrap">
+                                <div class="col l-6 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item wow fadeInLeft" data-wow-delay=".2s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpg);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">Cyperpunk 2077</h4>
+                                        
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff">
+                                                    <p class="saleoff--percent">-25%</p>
+                                                </div>
+
+                                                <div class="price--all">
+                                                    <span href="" class="price--old">$50,00</span>
+                                                    <span href="" class="price--new">$37,50</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+                                <div class="col l-6 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item wow fadeInRight" data-wow-delay=".2s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/Cau-Hinh-Game-Than-Trung-Tren-Steam-Sap-Ra-Mat-1.jpg);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">The Death</h4>
+                                            
+                                            <span class="content__popular-price">$11,99</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-0 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item wow fadeInRight" data-wow-delay=".2s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/god-of-war-2018-pc-port-768x432.jpg);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">God of War</h4>
+                                            
+                                            <span class="content__popular-price">$42,15</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-0 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item wow fadeInRight" data-wow-delay=".2s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/photo-1-1643350950526912005620.jpg);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">PUBG: Battlegounds</h4>
+                                            
+                                            <span class="content__popular-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-0 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item wow fadeInRight" data-wow-delay=".2s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/MbappeLoadingScreen_1200x675.png);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">FIFA Online 4</h4>
+                                            
+                                            <span class="content__popular-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-12 c-0">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item content__popular-item--sm wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/god-of-war-2018-pc-port-768x432.jpg);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">God of War</h4>
+                                            
+                                            <span class="content__popular-price">$42,15</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-4 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item content__popular-item--sm wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/photo-1-1643350950526912005620.jpg);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">PUBG: Battlegounds</h4>
+                                            
+                                            <span class="content__popular-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-4 c-12">
+                                    <a href="productdetailpage.html" class="content__popular-item content__popular-item--sm wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="content__popular-img hover-img" style="background-image: url(./assets/imgs/store/popular/MbappeLoadingScreen_1200x675.png);"></div>
+
+                                        <div class="content__popular-content">
+                                            <h4 class="content__popular-heading">FIFA Online 4</h4>
+                                            
+                                            <span class="content__popular-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__genre-wrapper">    
+                    <div class="content__genre">
+                        <label for="content__genre-checkbox" class="content__genre-label wow fadeInUp">
+                                <h4 class="content__genre-title">Genre:</h4>
+                                <p class="content__genre-title-item">All</p>
+                                <i class="content__genre-title-icon fa-solid fa-angle-down"></i>
+                                <i class="content__genre-title-icon content__genre-title-icon--up fa-solid fa-angle-up"></i>
+                        </label>
+
+                        <input type="checkbox" hidden id="content__genre-checkbox" class="content__genre-checkbox">
+
+                        <ul class="content__genre-list">
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">All</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link content__genre-link-1">Adventure</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">Horror</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">Open World</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">Story Rich</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">Survival</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">Sport</a>
+                            </li>
+                            <li class="content__genre-item">
+                                <a href="" class="content__genre-link">Simalator</a>
+                            </li>
+                        </ul>
+
+                        <div id="content__genre-games-1" class="content__genre-games">
+                            <div class="row sm-gutter">
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/pubg.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">PUBG: Battleground</h4>
+
+                                            <span class="content__genre-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/haloinfinite.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Halo Infinite</h4>
+
+                                            <span class="content__genre-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.6s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/warframe.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">WARFRAME</h4>
+
+                                            <span class="content__genre-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.8s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/naraka.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">NARAKA: Bladepoint</h4>
+
+                                            <span class="content__genre-price">$15,16</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/predator.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Predator: Hunting Grounds</h4>
+
+                                            <span class="content__genre-price">$32,00</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/godofwar.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">God of War</h4>
+
+                                            <span class="content__genre-price">$42,15</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.6s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/elden-ring.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">ELDEN RING</h4>
+
+                                            <!-- <span class="content__genre-price">$11.19</span> -->
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-30%</p>
+                                                </div>
+                                            
+                                                <div class="price--all">
+                                                    <span href="" class="price--old price--old--sm">$50,00</span>
+                                                    <span href="" class="price--new price--new--sm">$35,00</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.8s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Cyberpunk 2077</h4>
+
+                                            <!-- <span class="content__genre-price">$11.19</span> -->
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-25%</p>
+                                                </div>
+                                            
+                                                <div class="price--all">
+                                                    <span href="" class="price--old price--old--sm">$50,00</span>
+                                                    <span href="" class="price--new price--new--sm">$37,50</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/revillage.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Resident Evil Village</h4>
+
+                                            <!-- <span class="content__genre-price">$11.19</span> -->
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-50%</p>
+                                                </div>
+                                            
+                                                <div class="price--all">
+                                                    <span href="" class="price--old price--old--sm">$59,99</span>
+                                                    <span href="" class="price--new price--new--sm">$29,99</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/Cau-Hinh-Game-Than-Trung-Tren-Steam-Sap-Ra-Mat-1.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">The Death Thần Trùng</h4>
+
+                                            <span class="content__genre-price">$11,99</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.6s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/gta5.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Grand Theft Auto V</h4>
+
+                                            <!-- <span class="content__genre-price">$11.19</span> -->
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-25%</p>
+                                                </div>
+                                            
+                                                <div class="price--all">
+                                                    <span href="" class="price--old price--old--sm">$39,99</span>
+                                                    <span href="" class="price--new price--new--sm">$29,99</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.8s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/ark.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">ARK: Survival Evolved</h4>
+
+                                            <!-- <span class="content__genre-price">$11.19</span> -->
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-100%</p>
+                                                </div>
+                                            
+                                                <div class="price--all">
+                                                    <span href="" class="price--old price--old--sm">$15,00</span>
+                                                    <span href="" class="price--new price--new--sm free">Free</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.2s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/MbappeLoadingScreen_1200x675.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">FIFA Online 4</h4>
+
+                                            <span class="content__genre-price">Free</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/forzahorizon5.jpg)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Forza Horizon 5</h4>
+
+                                            <span class="content__genre-price">$39,99</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.6s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/flight.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Microsoft Flight Simulator</h4>
+
+                                            <span class="content__genre-price">$56,14</span>
+                                        </div> 
+                                    </a>
+                                </div>
+
+                                <div class="col l-3 c-6">
+                                    <a href="productdetailpage.html" class="content__genre-games-item wow fadeInUp" data-wow-delay="0.8s">
+                                        <div class="content__genre-img hover-img" style="background-image: url(./assets/imgs/store/amongus.png)"></div>
+
+                                        <div class="content__genre-content">
+                                            <h4 class="content__genre-heading">Among Us</h4>
+
+                                            <!-- <span class="content__genre-price">$11,19</span> -->
+                                            <div class="price-wrapper">
+                                                <div href="" class="saleoff saleoff--sm">
+                                                    <p class="saleoff--percent saleoff--percent--sm">-100%</p>
+                                                </div>
+                                            
+                                                <div class="price--all">
+                                                    <span href="" class="price--old price--old--sm">$2,00</span>
+                                                    <span href="" class="price--new price--new--sm free">Free</span>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="pagination">
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">
+                            <i class="pagination-icon fa-solid fa-angle-left"></i>
+                        </a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link pagination-link--active">1</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">2</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">3</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">4</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">...</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">
+                            <i class="pagination-icon fa-solid fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-link">
+                            <i class="pagination-icon fa-solid fa-angles-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+
+        <footer class="footer">
+            <div class="footer__container" style="background-image: url(./assets/imgs/homepage/banner/codmw2__footer.png);">
+                <div class="grid wide">
+                    <div class="row footer__header">
+                        <div class="col l-4 c-12">
+                            <div class="footer__logo">
+                                <img src="./assets/imgs/Logo/Logo.png" alt="" class="footer__logo-img">
+                                <p class="footer__logo-text">MOVO is an online distribution platform, digital rights management, multiplayer video game, and internet based social communication service.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="col l-4 c-12">
+                            <div class="footer__headquarter">
+                                <h4 class="footer__headquarter-heading">MOVO Headquarters</h4>
+                                <p class="footer__headquarter-text">1, Ly Tu Trong, Ninh Kieu District, Can Tho City, An Cu, Ninh Kieu, Can Tho, Vietnam.</p>
+                            </div>
+
+                            <div class="footer__contactus">
+                                <h4 class="footer__contactus-heading">Contact us</h4>
+                                <a class="footer__contactus-mail" href="mailto: movo@gmail.com" >movo@gmail.com</a>
+                                <a href="tel: +84 939 888 868" class="footer__contactus-phone">+84 939 888 868</a>
+                            </div>
+
+                            <div class="footer__social">
+                                <a href="https://www.facebook.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="https://twitter.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 c-12">
+                            <div class="footer__comment-tomail">
+                                <label for="" class="footer__comment-tomail--label">Email</label>
+                                <input type="email" id="footer__comment-tomail--input" class="footer__comment-tomail--input" placeholder="Type your email here...">
+                            </div>
+
+                            <div class="footer__comment-message">
+                                <label for="" class="footer__comment-message--label">Message</label>
+                                <input type="text" id="footer__comment-message--input" class="footer__comment-message--input" placeholder="Type your message here...">
+                            </div>
+
+                            <button type="submit" class="footer__btn">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__bottom-text">
+                        &copy 2022 MOVO Corporation.
+                        <a href="" class="footer__bottom-link">Terms of Service</a> |
+                        <a href="" class="footer__bottom-link">Privacy Policy</a> |
+                        <a href="" class="footer__bottom-link">Store Refund Policy</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+                    <!-- FORMS -->
+            <!-- SIGN IN -->
+            <div class="forms form-signin">
+                <div id="signin" class="form__container signin js-form-container-signin">
+                    <form class="form-signin" action="">
+                        <div class="form__close js-form-close-signin">
+                            <i class="form__close-icon fa-solid fa-xmark"></i>
+                        </div>
+        
+                        <header class="form__header">
+                            <p>Sign in</p>
+                        </header>
+        
+                        <div class="form__control">
+                            <label for="usernameSignin" class="form__label">
+                                <i class="sign-icon fa-solid fa-user"></i>
+                                SIGN IN WITH ACCOUNT NAME
+                            </label>
+        
+                            <input id="usernameSignin" type="text" class="form__input">
+                            <small class="small-signin"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="passwordSignin" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                PASSWORD
+                            </label>
+        
+                            <input id="passwordSignin" type="password" class="form__input">
+                            <small class="small-signin"></small>
+                        </div>
+        
+                        <a href="" class="form__forgot">Forgot password?</a>
+        
+                        <button type="submit" id="form__book-btn">
+                            Sign in
+                        </button>
+        
+                        <div class="form__signwith">
+                            <div class="border-horizontal"></div>
+                            <p class="form__signwith-title">Sign in with</p>
+                        </div>
+        
+                        <div class="form__signwith-icon-wrapper">
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-google"></i>
+                            </a>
+                        </div>
+        
+                        <footer class="form__sign-footer">
+                            <p class="form__sign-footer-text">Don't have an account?</p>
+                            <a class="form__sign-footer-link link signup-link" href="#all">Register now</a>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+                
+                    <!-- SIGN UP -->
+            <div class="forms form-signup">
+                <div class="form__container signup js-form-container-signup">
+                    <form class="form-signup" action="">
+                        <div class="form__close js-form-close-signup">
+                            <i class="form__close-icon fa-solid fa-xmark"></i>
+                        </div>
+        
+                        <div class="form__back js-form-back-signin">
+                            <i class="form__back-icon fa-solid fa-arrow-left"></i>
+                        </div>
+        
+                        <header class="form__header">
+                            <p>Sign up</p>
+                        </header>
+        
+                        <div class="form__control">
+                            <label for="usernameSignup" class="form__label">
+                                <i class="sign-icon fa-solid fa-user"></i>
+                                ACCOUNT NAME
+                            </label>
+        
+                            <input id="usernameSignup" type="text" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="email" class="form__label">
+                                <i class="sign-icon fa-solid fa-envelope"></i>
+                                EMAIL
+                            </label>
+        
+                            <input id="email" type="email" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+                        <div class="form__control">
+                            <label for="passwordSignup" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                PASSWORD
+                            </label>
+        
+                            <input id="passwordSignup" type="password" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="re-password" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                RE-ENTER THE PASSWORD
+                            </label>
+        
+                            <input id="re-password" type="password" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <div class="check-box-wrapper">
+                                <input id="check-box" type="checkbox" class="form__input check-box">
+                                <p class="check-box-text">I agree to the <a href="" class="check-box-link">
+                                    Terms of use
+                                </a> 
+                                    and 
+                                <a href="" class="check-box-link">
+                                    Policy
+                                </a>
+                                    .
+                                </p>
+                            </div>
+                            <small class="small-signup"></small>
+                        </div>
+        
+        
+        
+                        <button type="submit" id="form__book-btn">
+                            Sign up
+                        </button>
+        
+                        <div class="form__signwith">
+                            <div class="border-horizontal"></div>
+                            <p class="form__signwith-title">Sign up with</p>
+                        </div>
+        
+                        <div class="form__signwith-icon-wrapper">
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-google"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <script src="./assets/javascript/showMenuMb.js"></script>
+            <script src="./assets/javascript/showform.js"></script>
+            <script src="./assets/javascript/formValid.js"></script>
+            <script src="./assets/javascript/wow.min.js"></script>
+            <script>
+                new WOW().init();
+            </script>
+</body>
+</html>

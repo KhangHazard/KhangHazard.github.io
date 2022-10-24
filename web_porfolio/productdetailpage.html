@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVO</title>
+    <link rel="icon" type="img/x-icon" href="./assets/imgs/Logo/Logo_tabbar.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header_navbar">
+                    <i class="mobile__menu-icon fa-solid fa-bars"></i>
+
+                    <div class="header_navbar-wrapper">
+                        <div class="header__logo">
+                            <a href="#" class="header__logo-link">
+                                <img src="./assets/imgs/logo/Logo.png" alt="" class="header__logo-img">
+                            </a>
+                        </div>
+
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item header__navbar-item-search">
+                                <div class="header__search">
+                                    <input type="text" class="header__search-input" placeholder="Search">
+
+                                    <button class="header__search-btn">
+                                        <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="index.html" class="header__navbar-link">Home</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="aboutuspage.html" class="header__navbar-link">About us</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="productpage.html" class="header__navbar-link active-link">Store</a>
+                            </li>
+
+                            <li class="header__navbar-item">
+                                <a href="newspage.html" class="header__navbar-link">News</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="header__search-wrapper">
+                        <div class="header__search">
+                            <input type="text" class="header__search-input" placeholder="Search">
+                            <button class="header__search-btn">
+                                <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <div class="header__navbar-icon">
+                            <a href="#all" class="header__navbar-icon-link js-buy-ticket">
+                                <i class="header__navbar-icon-account fa-regular fa-user"></i>
+                            </a>
+                            <a href="cartpage.html" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon-cart fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="grid wide">
+                <div class="content__game">
+                    <h3 class="content__game-title wow fadeInUp" data-wow-delay=".2s">CYBERPUNK 2077</h3>
+                    <div class="content__game-imgs">
+                        <div class="row sm-gutter">
+                            <div class="col l-9 c-12">
+                                <div class="border-horizontal wow fadeInUp" data-wow-delay=".4s"></div>
+                                <div class="content__game-imgs--main wow fadeInUp" data-wow-delay=".4s" style="background-image: url(./assets/imgs/game_detial/cyberpunk1.jpg);"></div>
+                                <!-- <video autoplay class="content__game-imgs--main" controls width="100%" id="vid1">
+                                    <source src="../web_porfolio/assets/IMG_7435 (1).MOV" type="video/mp4">
+
+                                </video> -->
+
+                                <div class="content__game-imgs--main" style="background-image: url(./assets/imgs/game_detial/cyberpunk2.jpg);"></div>
+
+                                <div class="content__game-imgs--main" style="background-image: url(./assets/imgs/game_detial/cyberpunk3.jpg);"></div>
+
+                                <div class="content__game-imgs--main" style="background-image: url(./assets/imgs/game_detial/cyberpunk4.jpg);"></div>
+
+                                <div class="content__game-imgs--main" style="background-image: url(./assets/imgs/game_detial/cyberpunk5.jpg);"></div>
+
+                                <div class="row sm-gutter content__game-imgs--sub">
+                                    <div class="col l-2-4 c-2-4">
+                                        <div class="content__game-imgs--sub-item wow fadeInUp" data-wow-delay=".6s" onclick="currentSlideImg(1)" style="background-image: url(./assets/imgs/game_detial/cyberpunk1.jpg);"></div>
+                                    </div>
+                                    <div class="col l-2-4 c-2-4">
+                                        <div class="content__game-imgs--sub-item wow fadeInUp" data-wow-delay=".7s" onclick="currentSlideImg(2)" style="background-image: url(./assets/imgs/game_detial/cyberpunk2.jpg);"></div>
+                                    </div>
+                                    <div class="col l-2-4 c-2-4">
+                                        <div class="content__game-imgs--sub-item wow fadeInUp" data-wow-delay=".8s" onclick="currentSlideImg(3)" style="background-image: url(./assets/imgs/game_detial/cyberpunk3.jpg);"></div>
+                                    </div>
+                                    <div class="col l-2-4 c-2-4">
+                                        <div class="content__game-imgs--sub-item wow fadeInUp" data-wow-delay=".9s" onclick="currentSlideImg(4)" style="background-image: url(./assets/imgs/game_detial/cyberpunk4.jpg);"></div>
+                                    </div>
+                                    <div class="col l-2-4 c-2-4">
+                                        <div class="content__game-imgs--sub-item wow fadeInUp" data-wow-delay="1s" onclick="currentSlideImg(5)" style="background-image: url(./assets/imgs/game_detial/cyberpunk5.jpg);"></div>
+                                    </div>
+                                </div>
+
+                                <div class="content__game-buy-wrapper wow fadeInUp" data-wow-delay="1.1s">
+                                    <h4 class="content__game-buy-heading">Buy Cyperpunk 2077</h4>
+                                    <div class="content__game-buy">
+                                        <!-- <span class="content__game-buy-price">$49,99</span> -->
+                                        <div class="price-wrapper">
+                                            <div class="saleoff saleoff--sm">
+                                                <p class="saleoff--percent saleoff--percent--sm">-25%</p>
+                                            </div>
+                                            <div class="price--all">
+                                                <span class="price--old price--old--sm">$50,00</span>
+                                                <span class="price--new price--new--sm">$37,50</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="content__game-buy-btn">
+                                            <a href="cartwithboughtpage.html" class="content__game-buy-link">
+                                                <p class="content__game-buy-btn-text">Get</p>
+                                            </a>
+                                        </div>
+
+                                        <div class="content__game-add-btn">
+                                            <a href="" class="content__game-add-link">
+                                                <p class="content__game-add-btn-text">Add to cart</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="content__game-buy-btn out-side wow fadeInUp" data-wow-delay="1.2s">
+                                    <a href="cartwithboughtpage.html" class="content__game-buy-link">
+                                        <p class="content__game-buy-btn-text">Get</p>
+                                    </a>
+                                </div>
+
+                                <div class="content__game-add-btn out-side wow fadeInUp" data-wow-delay="1.3s">
+                                    <a href="" class="content__game-add-link">
+                                        <p class="content__game-add-btn-text">Add to cart</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col l-3 content__game-shortinfo">
+                                <div class="content__game-shortinfo-img wow fadeInUp" data-wow-delay=".6s" style="background-image: url(./assets/imgs/game_detial/cyberpunk.jpg);"></div>
+                                <p class="content__game-shortinfo-content wow fadeInUp" data-wow-delay=".7s">
+                                    Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.
+                                </p>
+                                <div class="content__game-shortinfo-detail m-bt-24 wow fadeInUp" data-wow-delay=".8s">
+                                    <h5 class="content__game-shortinfo-heading">Release date: </h5>
+                                    <span class="content__game-shortinfo--date">10 Dec, 2020</span>
+                                </div>
+
+                                <div class="content__game-shortinfo-detail wow fadeInUp" data-wow-delay=".9s">
+                                    <h5 class="content__game-shortinfo-heading">Developer: </h5>
+                                    <a href="" class="content__game-shortinfo-name">CD PROJEKT RED</a>
+                                </div>
+
+                                <div class="content__game-shortinfo-detail wow fadeInUp" data-wow-delay="1s">
+                                    <h5 class="content__game-shortinfo-heading">Publisher: </h5>
+                                    <a href="" class="content__game-shortinfo-name">CD PROJEKT RED</a>
+                                </div>
+                                <a href="" class="content__game-shortinfo-img--review-link wow fadeInUp" data-wow-delay="1.1s">
+                                    <div class="content__game-shortinfo-img--review" style="background-image: url(./assets/imgs/game_detial/metacritic.png);"></div>
+                                </a>    
+                                <div class="content__game-shortinfo-rate wow fadeInUp" data-wow-delay="1.2s">
+                                    <p class="content__game-shortinfo-core">86</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__game-info">
+                    <div class="content__game-about">
+                        <h4 class="content__game-about-heading wow fadeInUp" data-wow-delay=".2s">About this game</h4>
+                        <p class="content__game-about-content wow fadeInUp" data-wow-delay=".2s">
+                            Cyberpunk 2077 is an open-world, action-adventure RPG set in the megalopolis of Night City, where you play as a cyberpunk mercenary wrapped up in a do-or-die fight for survival. Improved and featuring all-new free additional content, customize your character and playstyle as you take on jobs, build a reputation, and unlock upgrades. The relationships you forge and the choices you make will shape the story and the world around you. Legends are made here. What will yours be? 
+                        </p>
+                        <span class="content__game-about-content-heading wow fadeInUp" data-wow-delay=".2s">CREATE YOUR OWN CYBERPUNK:</span>
+                        <p class="content__game-about-content wow fadeInUp" data-wow-delay=".2s">Become an urban outlaw equipped with cybernetic enhancements and build your legend on the streets of Night City.</p>
+                            
+                        <span class="content__game-about-content-heading wow fadeInUp" data-wow-delay=".2s">EXPLORE THE CITY OF THE FUTURE:</span>
+                        <p class="content__game-about-content wow fadeInUp" data-wow-delay=".2s">Night City is packed to the brim with things to do, places to see, and people to meet. And it's up to you where to go, when to go, and how to get there.</p>
+                           
+                        <span class="content__game-about-content-heading wow fadeInUp" data-wow-delay=".2s">BUILD YOUR LEGEND:</span>
+                        <p class="content__game-about-content wow fadeInUp" data-wow-delay=".2s">Go on daring adventures and build relationships with unforgettable characters whose fates are shaped by the choices you make.</p>
+                           
+                        <span class="content__game-about-content-heading wow fadeInUp" data-wow-delay=".2s">INCLUDES FREE ADDITIONAL CONTENT:</span>
+                        <p class="content__game-about-content wow fadeInUp" data-wow-delay=".2s">Get your hands on a haul of free items including new guns and melee weapons, as well as extra customization options and more.</p>
+                    </div>
+
+                    <div class="content__game-system">
+                        <h4 class="content__game-system-heading wow fadeInUp" data-wow-delay=".2s">System Requirements</h4>
+                        <div class="row">
+                            <div class="col l-6">
+                                <h5 class="content__game-system-sub-heading wow fadeInUp" data-wow-delay=".2s">MINIMUM:</h5>
+                                <p class="content__game-system-text wow fadeInUp" data-wow-delay=".2s">
+                                    Requires a 64-bit processor and operating system<br>
+                                    OS: Windows 10<br>
+                                    Processor: Intel Core i5-3570K or AMD FX-8310<br>
+                                    Memory: 8 GB RAM<br>
+                                    Graphics: NVIDIA GeForce GTX 970 or AMD Radeon RX 470<br>
+                                    DirectX: Version 12<br>
+                                    Storage: 70 GB available space<br>
+                                </p>
+                            </div>
+
+                            <div class="col l-6">
+                                <h5 class="content__game-system-sub-heading wow fadeInUp" data-wow-delay=".2s">RECOMMENDED:</h5>
+                                <p class="content__game-system-text wow fadeInUp" data-wow-delay=".2s">
+                                    Requires a 64-bit processor and operating system<br>
+                                    OS: Windows 10<br>
+                                    Processor: Intel Core i5-3570K or AMD FX-8310<br>
+                                    Memory: 8 GB RAM<br>
+                                    Graphics: NVIDIA GeForce GTX 970 or AMD Radeon RX 470<br>
+                                    DirectX: Version 12<br>
+                                    Storage: 70 GB available space<br>
+                                </p>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content__game-more-wrapper">
+                    <h4 class="content__game-more-heading wow fadeInUp" data-wow-delay=".2s">More like this</h4>
+                    <div class="content__game-more-box wow fadeInUp" data-wow-delay=".2s">
+                        <div class="row sm-gutter">
+                            <div class="col l-4 c-12">
+                                <a href="" class="content__game-more">
+                                    <div class="content__game-more-img hover-img" style="background-image: url(./assets/imgs/game_detial/dayz_morelikethis.png);"></div>
+                                    <div class="content__game-more-info">
+                                        <h5 class="content__game-more-name">DayZ</h5>
+                                        <span class="content__game-more-price">$41,96</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col l-4 c-12">
+                                <a href="" class="content__game-more">
+                                    <div class="content__game-more-img hover-img" style="background-image: url(./assets/imgs/game_detial/naraka_morelikethis.jpg);"></div>
+                                    <div class="content__game-more-info">
+                                        <h5 class="content__game-more-name">NARAKA: BLADEPOINT</h5>
+                                        <span class="content__game-more-price">$15,16</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col l-4 c-12">
+                                <a href="" class="content__game-more">
+                                    <div class="content__game-more-img hover-img" style="background-image: url(./assets/imgs/game_detial/predator_morelikethis.jpg);"></div>
+                                    <div class="content__game-more-info">
+                                        <h5 class="content__game-more-name">Predator: Hunting Grounds</h5>
+                                        <span class="content__game-more-price">$31,42</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="footer">
+            <div class="footer__container" style="background-image: url(./assets/imgs/homepage/banner/codmw2__footer.png);">
+                <div class="grid wide">
+                    <div class="row footer__header">
+                        <div class="col l-4 c-12">
+                            <div class="footer__logo">
+                                <img src="./assets/imgs/Logo/Logo.png" alt="" class="footer__logo-img">
+                                <p class="footer__logo-text">MOVO is an online distribution platform, digital rights management, multiplayer video game, and internet based social communication service.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="col l-4 c-12">
+                            <div class="footer__headquarter">
+                                <h4 class="footer__headquarter-heading">MOVO Headquarters</h4>
+                                <p class="footer__headquarter-text">1, Ly Tu Trong, Ninh Kieu District, Can Tho City, An Cu, Ninh Kieu, Can Tho, Vietnam.</p>
+                            </div>
+
+                            <div class="footer__contactus">
+                                <h4 class="footer__contactus-heading">Contact us</h4>
+                                <a class="footer__contactus-mail" href="mailto: movo@gmail.com" >movo@gmail.com</a>
+                                <a href="tel: +84 939 888 868" class="footer__contactus-phone">+84 939 888 868</a>
+                            </div>
+
+                            <div class="footer__social">
+                                <a href="https://www.facebook.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="https://twitter.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="https://www.instagram.com/" target=“_blank” class="footer__social-link">
+                                    <i class="footer__social-icon fa-brands fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col l-4 c-12">
+                            <div class="footer__comment-tomail">
+                                <label for="" class="footer__comment-tomail--label">Email</label>
+                                <input type="email" id="footer__comment-tomail--input" class="footer__comment-tomail--input" placeholder="Type your email here...">
+                            </div>
+
+                            <div class="footer__comment-message">
+                                <label for="" class="footer__comment-message--label">Message</label>
+                                <input type="text" id="footer__comment-message--input" class="footer__comment-message--input" placeholder="Type your message here...">
+                            </div>
+
+                            <button type="submit" class="footer__btn">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <p class="footer__bottom-text">
+                        &copy 2022 MOVO Corporation.
+                        <a href="" class="footer__bottom-link">Terms of Service</a> |
+                        <a href="" class="footer__bottom-link">Privacy Policy</a> |
+                        <a href="" class="footer__bottom-link">Store Refund Policy</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+                    <!-- FORMS -->
+            <!-- SIGN IN -->
+            <div class="forms form-signin">
+                <div id="signin" class="form__container signin js-form-container-signin">
+                    <form class="form-signin" action="">
+                        <div class="form__close js-form-close-signin">
+                            <i class="form__close-icon fa-solid fa-xmark"></i>
+                        </div>
+        
+                        <header class="form__header">
+                            <p>Sign in</p>
+                        </header>
+        
+                        <div class="form__control">
+                            <label for="usernameSignin" class="form__label">
+                                <i class="sign-icon fa-solid fa-user"></i>
+                                SIGN IN WITH ACCOUNT NAME
+                            </label>
+        
+                            <input id="usernameSignin" type="text" class="form__input">
+                            <small class="small-signin"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="passwordSignin" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                PASSWORD
+                            </label>
+        
+                            <input id="passwordSignin" type="password" class="form__input">
+                            <small class="small-signin"></small>
+                        </div>
+        
+                        <a href="" class="form__forgot">Forgot password?</a>
+        
+                        <button type="submit" id="form__book-btn">
+                            Sign in
+                        </button>
+        
+                        <div class="form__signwith">
+                            <div class="border-horizontal"></div>
+                            <p class="form__signwith-title">Sign in with</p>
+                        </div>
+        
+                        <div class="form__signwith-icon-wrapper">
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-google"></i>
+                            </a>
+                        </div>
+        
+                        <footer class="form__sign-footer">
+                            <p class="form__sign-footer-text">Don't have an account?</p>
+                            <a class="form__sign-footer-link link signup-link" href="#all">Register now</a>
+                        </footer>
+                    </form>
+                </div>
+            </div>
+                
+                    <!-- SIGN UP -->
+            <div class="forms form-signup">
+                <div class="form__container signup js-form-container-signup">
+                    <form class="form-signup" action="">
+                        <div class="form__close js-form-close-signup">
+                            <i class="form__close-icon fa-solid fa-xmark"></i>
+                        </div>
+        
+                        <div class="form__back js-form-back-signin">
+                            <i class="form__back-icon fa-solid fa-arrow-left"></i>
+                        </div>
+        
+                        <header class="form__header">
+                            <p>Sign up</p>
+                        </header>
+        
+                        <div class="form__control">
+                            <label for="usernameSignup" class="form__label">
+                                <i class="sign-icon fa-solid fa-user"></i>
+                                ACCOUNT NAME
+                            </label>
+        
+                            <input id="usernameSignup" type="text" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="email" class="form__label">
+                                <i class="sign-icon fa-solid fa-envelope"></i>
+                                EMAIL
+                            </label>
+        
+                            <input id="email" type="email" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+                        <div class="form__control">
+                            <label for="passwordSignup" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                PASSWORD
+                            </label>
+        
+                            <input id="passwordSignup" type="password" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <label for="re-password" class="form__label">
+                                <i class="sign-icon fa-solid fa-lock"></i>
+                                RE-ENTER THE PASSWORD
+                            </label>
+        
+                            <input id="re-password" type="password" class="form__input">
+                            <small class="small-signup"></small>
+                        </div>
+        
+                        <div class="form__control">
+                            <div class="check-box-wrapper">
+                                <input id="check-box" type="checkbox" class="form__input check-box">
+                                <p class="check-box-text">I agree to the <a href="" class="check-box-link">
+                                    Terms of use
+                                </a> 
+                                    and 
+                                <a href="" class="check-box-link">
+                                    Policy
+                                </a>
+                                    .
+                                </p>
+                            </div>
+                            <small class="small-signup"></small>
+                        </div>
+        
+        
+        
+                        <button type="submit" id="form__book-btn">
+                            Sign up
+                        </button>
+        
+                        <div class="form__signwith">
+                            <div class="border-horizontal"></div>
+                            <p class="form__signwith-title">Sign up with</p>
+                        </div>
+        
+                        <div class="form__signwith-icon-wrapper">
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="form__signwith-icon-link">
+                                <i class="form__signwith-icon fa-brands fa-google"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+             
+    <script>
+        let slideIndexImg = 1;
+        showSlidesImg(slideIndexImg);
+        
+        function plusSlidesImg(m) {
+          showSlidesImg(slideIndexImg += m);
+        }
+        
+        function currentSlideImg(m) {
+          showSlidesImg(slideIndexImg = m);
+        }
+        
+        function showSlidesImg(m) {
+          let j;
+          let slidesImg = document.getElementsByClassName("content__game-imgs--main");
+          let transferBtnsImg = document.getElementsByClassName("content__game-imgs--sub-item");
+          if (m > slidesImg.length) {slideIndexImg = 1}    
+          if (m < 1) {slideIndexImg = slidesImg.length}
+          for (j = 0; j < slidesImg.length; j++) {
+            slidesImg[j].style.display = "none";  
+          }
+          for (j = 0; j < transferBtnsImg.length; j++) {
+            transferBtnsImg[j].className = transferBtnsImg[j].className.replace(" active", "");
+          }
+
+          slidesImg[slideIndexImg-1].style.display = "block";  
+          transferBtnsImg[slideIndexImg-1].className += " active";
+        }
+    </script>
+
+    <script src="./assets/javascript/showMenuMb.js"></script>
+    <script src="./assets/javascript/showform.js"></script>
+    <script src="./assets/javascript/formValid.js"></script>
+    <script src="./assets/javascript/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>
+</html>
