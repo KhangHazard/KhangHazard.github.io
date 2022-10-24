@@ -1,0 +1,584 @@
+@media (max-width: 740px){
+    :root{
+        --header-height: 72px;
+    }
+
+    .mobile__menu-icon{
+        display: block;
+    }
+
+    .content{
+        margin: 0 16px;
+    }
+
+    .no-wrap{
+        flex-wrap: nowrap;
+    }
+
+    .hide{
+        display: none;
+    }
+
+    .show{
+        display: block;
+    }  
+
+    /* PAGINATION */
+    .pagination-item{
+        font-size: 1.4rem;
+    }
+
+    .pagination-link{
+        margin: 0;
+        padding: 8px 20px;
+    }
+
+
+    /* SALE & PRICE - MB */
+    .saleoff{
+        width: 60px;
+        height: 30px;
+    }
+
+    .saleoff--percent{
+        font-size: 1.4rem;
+        line-height: 3rem;
+    }   
+
+    .price--all{
+        font-size: 1.2rem;
+    }   
+
+    .price--old--sm{
+        font-size: 1.2rem;
+    }
+    
+    .price--new--sm{
+      font-size: 1.2rem;
+    }   
+
+
+    /* HEADER-MB */
+    .header_navbar{
+        padding: 0 6px;
+    }
+
+    .header__navbar-list{
+        position: absolute;
+        flex-direction: column;
+        left: 0;
+        top: 99%;
+        margin: 0;
+        display: none;
+        align-items: flex-start;
+        background-color: #252525;
+        width: 100%;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .header__navbar-item{
+        padding: 14px 0 14px 16px;
+        width: 100%;
+    }
+
+    .header__navbar-link{
+        width: 100%;
+        display: block;
+    }
+
+    .header__navbar-list.show-menu-mb{
+        display: flex;
+    }
+
+    .header__search{
+        display: none;
+    }
+
+    .header__logo-img {
+        width: 140px;
+        margin-top: 2px;
+    }
+
+    .header__navbar-icon{
+        margin: 0;
+    }
+
+    .header__navbar-icon-link{
+        font-size: 2.4rem;
+        padding: 10px;
+    }
+
+    .header__navbar-icon-cart{
+        margin: 0;
+    }
+
+    .header__navbar-item.header__navbar-item-search{
+        padding: 14px 16px;
+        /* margin: 0 16px; */
+    }
+    .header__navbar-item.header__navbar-item-search .header__search{
+        display: flex;
+        height: 30px;
+    }
+
+    .header__navbar-item.header__navbar-item-search .header__search-input{
+        width: 100%;
+    }
+
+    .header__navbar-item.header__navbar-item-search .header__search-btn-icon{
+        font-size: 1.5rem;
+    }
+
+
+    /* FOOTER */
+    .footer__container{
+        background-size: unset;
+    }
+    .footer__header{
+        padding: 0 16px;
+    }
+    .footer__logo{
+        margin-bottom: 24px;
+    }   
+
+    .footer__contactus-mail, 
+    .footer__contactus-phone{
+        display: inline-block;
+        padding: 8px 40px 16px 0;
+    }
+    .footer__contactus-heading{
+        margin-bottom: 4px;
+    }   
+
+    .footer__social{
+        margin-top: 8px;
+    }   
+
+    .footer__comment-tomail{
+       margin-top: 44px;
+    }
+
+    .footer__bottom{
+        padding: 44px 16px 16px 16px;
+    }
+
+
+                                                        /* HOMEPAGE-MB */
+
+    /* HOME BACKGROUND */
+    .home__background{
+        height: 30vh;
+    }
+
+    .auto-dot{
+        height: 2px;
+        width: 24px;
+    }
+
+
+    /* RECOMMENDED */
+    .content__recommended-img-link{
+        height: 180px;
+    }
+
+    .content__recommended-text{
+        display: none;
+    }
+
+    .content__news-title,
+    .content__bestsale-title,
+    .content__recommended-title{
+        font-size: 1.8rem;
+    }
+
+    .content__recommended-info{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4px 16px;
+        height: 48px;
+    }
+    
+    .content__recommended-name-title{
+        font-size: 1.4rem;
+    }
+
+    .content__recommended-price{
+        font-size: 1.2rem;
+    }
+
+
+    /* LIST */
+    .content__list-section{
+      overflow-x: auto;
+    }
+
+    .content__list-section::-webkit-scrollbar{
+      height: 2px;
+    }
+
+    .content__list-section::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+    
+    .content__list-section .row{
+      flex-wrap: nowrap;
+    }
+
+    .content__list-info-link{
+      font-size: 1.4rem;
+    }
+
+    .content__list-content .content__list-price{
+        font-size: 1.2rem;
+    }
+
+
+    /* NEWS */
+    .content__news-link{
+        margin-bottom: 32px;
+        display: block;
+    }
+
+    .content__news-img{
+        height: 180px;
+    }
+
+    .content__news-section .row .col:last-child .content__news-link{
+        margin-bottom: 0;
+    }
+
+    
+                                                        /* PRODUCT-MB */
+    /* POPULAR */
+    .content__popular{
+        overflow-x: auto;
+    }
+
+    .content__popular::-webkit-scrollbar{
+        height: 2px;
+    }
+
+    .content__popular::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    .content__popular-item{
+        margin-bottom: 16px;
+    }
+
+    .content__popular-title{
+        font-size: 1.8rem;
+    }
+
+    .content__popular-img{
+        height: 160px;
+    }
+
+    .content__popular-content{
+        height: 48px;
+        padding: 0 8px;
+    }
+
+    .content__popular-price{
+        font-size: 1.2rem;
+    }
+
+
+    /* GENRE */
+    .content__genre-title{
+        font-size: 1.6rem;
+    }
+
+    .content__genre-price{
+        font-size: 1.2rem;
+    }
+
+    .content__genre-title-item{
+        font-size: 1.6rem;
+    }
+
+    .content__genre-heading{
+        font-size: 1.2rem;
+    }
+
+    .content__genre-games-item .saleoff.saleoff--sm{
+        width: 60px;
+        height: 30px;
+    }
+
+    .content__genre-games-item .saleoff--percent.saleoff--percent--sm{
+        line-height: 3rem;
+        font-size: 1.4rem;
+    }
+
+    .content__genre-games-item .price--new.price--new--sm,
+    .content__genre-games-item .price--old.price--old--sm{
+        font-size: 1.2rem;
+    }
+
+
+      
+                                                            /* NEWS PAGE-MB */
+    .content__news-sub-img{
+        min-width: 100px;
+        height: 120px;
+    }
+
+    .content__news-sub-heading{
+        font-size: 1.4rem;
+    }
+
+    .content__news-main-link{
+        margin-bottom: 32px;
+        display: block;
+    }
+
+    .content__news-main-title{
+        font-size: 1.8rem;
+    }
+
+    .content__news-main-img{
+        height: 180px;
+    }
+    
+
+                                                            /* NEWS DETAIL PAGE-MB */
+    .content__newsdt-heading{
+        font-size: 2.8rem;
+    }
+    
+    
+                                                            /* PRODUCT DETAIL PAGE-MB */
+    .content__game-imgs--main{
+        height: 200px;
+    }
+
+    .content__game-imgs--sub-item{
+        height: 40px;
+    }
+
+    .content__game-buy-heading{
+        font-size: 1.4rem;
+    }
+
+    .content__game-title{
+        font-size: 1.8rem;
+    }
+
+    .content__game-more-heading,
+    .content__game-about-heading,
+    .content__game-system-heading{
+        font-size: 1.6rem;
+    }
+
+
+    .content__game-buy-wrapper{
+        height: 54px;
+    }
+
+    .content__game-add-btn,
+    .content__game-buy-btn{
+        display: none;
+    }
+
+    .content__game-buy-btn.out-side,
+    .content__game-add-btn.out-side{
+        --buyBtn-heigth: 48px;
+        min-width: 80px;
+        line-height: 0;
+        height: var(--buyBtn-heigth);
+        display: block;
+        margin-left: 0;
+    }
+
+    .content__game-buy-btn.out-side{
+        margin: 10px 0 8px 0;
+    }
+
+    .content__game-add-btn-text,
+    .content__game-buy-btn-text{
+        line-height: var(--buyBtn-heigth);
+        font-size: 1.8rem;
+    }
+
+    .content__game-shortinfo-img{
+        margin-top: 16px;
+    }
+
+
+                                                            /* ABOUT US-MB */
+    .content__aboutus-intro{
+        margin-top: 32px;
+    }
+
+    .content__aboutus-img{
+        height: 236px;
+        margin-bottom: 32px;
+    }
+
+    .content__aboutus-desc{
+        font-size: 1.8rem;
+    }
+
+    .content__aboutus-intro .joinnow__btn{
+        margin-top: 36px;
+    }
+
+    .content__aboutus-heading{
+        font-size: 1.6rem;
+    }
+
+    .content__aboutus-info-title, 
+    .content__aboutus-features-title{
+        font-size: 1.8rem;
+    }
+
+    .content__aboutus-features-desc{
+        font-size: 1.4rem;
+    }
+
+    .content__aboutus-features-box{
+        height: 60px;
+        width: 60px;
+    }
+
+    .content__aboutus-features-icon{
+        font-size: 3rem;
+    }
+
+    .content__aboutus-features-text{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .content__aboutus-info-img{
+        height: 120px;
+        margin: 0 32px;
+        border-radius: 4px;
+    }
+
+    .content__aboutus-info-list .content__aboutus-info-item:nth-child(2) .content__aboutus-info-img{
+        margin: 0;
+    }
+
+    .content__aboutus-info-text{
+        margin-top: 16px;
+    }
+
+    .content__aboutus-info-desc{
+        font-size: 1.4rem;
+    }
+
+    .content__aboutus-info-item{
+        height: 280px;
+        padding: 16px 0;
+    }
+
+    .content__aboutus-info-heading{
+        margin-bottom: 12px;
+    }
+
+    .content__aboutus-info-list .content__aboutus-info-item:nth-child(2){
+        margin-bottom: 20px;
+    }
+
+
+                                                            /* CART-MB */
+    .content__checkout-img{
+        height: 96px;
+        width: 160px;
+    }
+
+    .content__checkout-title{
+        font-size: 1.8rem;
+    }
+
+    .content__checkout-heading{
+        font-size: 1.6rem;
+    }
+
+    .content__checkout-pay{
+        margin-left: 0;
+    }
+
+    .checkbox-radio-wrapper{
+        height: 40px;
+    }
+
+    .content__checkout-pay-btn{
+        height: 48px;
+    }
+    .content__checkout-pay-apps-icon{
+        font-size: 3.2rem;
+    }
+
+    .content__checkout-pay-btn{
+        font-size: 1.8rem;
+    }
+
+    .content__checkout-info-price{
+        font-size: 1.2rem;
+    }
+
+    .content__checkout-info .price-wrapper .price--old{
+        font-size: 1.2rem;
+    }
+
+    .content__checkout-info .price-wrapper .price--new{
+        font-size: 1.2rem;
+    }
+
+
+                                                            /* FORM-MB */
+    #form__book-btn{
+        font-size: 1.6rem;
+        width: 40%;
+        margin-top: 16px;
+        margin-bottom: 8px;
+    }
+
+    .form__header{
+        font-size: 2.4rem;
+    }
+
+    .form__container{
+        padding: 0 32px;
+    }
+
+    .form__header{
+        padding: 32px 24px 0 24px;
+    }
+
+    .form__label{
+        font-size: 1rem;
+    }
+
+    .form__signwith-icon{
+        font-size: 3rem;
+    }
+    
+    .form__control.errorSignup .small-signup{
+        font-size: 1.1rem;
+    }
+
+    .form__control{
+        margin: 8px 0;
+    }
+
+    .check-box-text{
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 741px) and (max-width: 1024px){
+    .header__search-input{
+        display: none;
+    }
+    .header__search{
+        border: none;
+    }
+    .header__search-btn-icon{
+        font-size: 1.8rem;
+    }
+}
